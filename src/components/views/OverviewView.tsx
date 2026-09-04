@@ -175,7 +175,7 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
       detail: "Satellite Servicing revenue pillar suffers equity starvation from isolated case study links.",
       delta: "-2 pts"
     },
-    model: "gemini-3.8-flash",
+    model: "Standard Telemetry Engine",
     generatedAt: "Just now"
   });
 
@@ -202,7 +202,7 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
             summary: data.summary,
             positiveMovement: data.positiveMovement || executiveInsights.positiveMovement,
             negativeMovement: data.negativeMovement || executiveInsights.negativeMovement,
-            model: data.model || "gemini-3.8-flash",
+            model: data.model || "Standard Telemetry Engine",
             generatedAt: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
           });
         }
@@ -588,7 +588,7 @@ export const OverviewView: React.FC<OverviewViewProps> = ({
       </section>
 
       {/* ========================================================================= */}
-      {/* DEEP DIVE 1: EXECUTIVE AI INSIGHTS (GEMINI 3.8 FLASH) */}
+      {/* DEEP DIVE 1: EXECUTIVE AI INSIGHTS (PROVIDER-AGNOSTIC) */}
       {/* ========================================================================= */}
       <section className="neu-card rounded-2xl p-5 sm:p-6 space-y-4 overflow-hidden border border-indigo-200/50 dark:border-indigo-500/20 text-slate-800 dark:text-slate-100">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#d4dce7] dark:border-slate-800">
