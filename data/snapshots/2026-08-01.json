@@ -1,0 +1,287 @@
+{
+  "metadata": {
+    "siteUrl": "https://nuviraspace.com",
+    "siteName": "NuVira Space",
+    "auditId": "AUD-2026-0801-NUVIRA-HIST-01",
+    "auditDate": "2026-08-01",
+    "datasetVersion": "3.7.4-prod",
+    "generatedBy": "Hermes Lead SEO & Specialist Agents v3.7.4",
+    "dataAvailability": {
+      "technical": "AVAILABLE",
+      "semantic": "AVAILABLE",
+      "clusters": "AVAILABLE",
+      "internalLinks": "AVAILABLE",
+      "content": "AVAILABLE",
+      "structuredData": "AVAILABLE",
+      "eeat": "AVAILABLE",
+      "aeo": "PARTIAL",
+      "gsc": "AVAILABLE",
+      "ga4": "AVAILABLE",
+      "wordpress": "AVAILABLE",
+      "bing": "AVAILABLE",
+      "psi": "AVAILABLE",
+      "embeddings": "AVAILABLE"
+    },
+    "notes": "Historical baseline snapshot for NuVira Space before sitemap and robots.txt remediation."
+  },
+  "healthScores": {
+    "overall": 70,
+    "technical": 79,
+    "content": 66,
+    "semantic": 68,
+    "internalLinks": 59,
+    "structuredData": 74,
+    "eeat": 75,
+    "aeo": 58,
+    "searchPerformance": 66,
+    "methodologyNote": "Historical weighted index baseline."
+  },
+  "executiveTakeaway": {
+    "whatIsWrong": [
+      "Robots.txt rule 'Disallow: /specifications/' was unintentionally blocking crawler access to newly drafted technical spec sheets.",
+      "Sitemap XML had 8 orphaned URLs and was missing 2 newly launched service pages.",
+      "Severe internal link starvation on Satellite Servicing pillar.",
+      "AEO direct answer definitions completely absent across all commercial offerings."
+    ],
+    "whyItMatters": [
+      "Googlebot unable to index high-converting engineering specs, suppressing early lead acquisition.",
+      "Crawl budget wasted on 404 targets and unlinked legacy blog items."
+    ],
+    "whatToDoNext": [
+      "Fix robots.txt syntax immediately to unblock /specifications/ path.",
+      "Regenerate clean XML sitemap with lastmod timestamps and submit to GSC.",
+      "Add internal links from propulsion to servicing."
+    ]
+  },
+  "issues": [
+    {
+      "id": "HIST-01",
+      "title": "Robots.txt Incorrectly Disallowing /specifications/ Directory",
+      "category": "TECHNICAL",
+      "severity": "CRITICAL",
+      "impact": "HIGH",
+      "effort": "LOW",
+      "priority": "P0",
+      "status": "OPEN",
+      "rootCause": "Staging disallow directive mistakenly merged into production robots.txt file.",
+      "affectedUrls": ["https://nuviraspace.com/specifications/"],
+      "evidenceIds": ["EVI-H01"],
+      "recommendedAction": "Remove Disallow: /specifications/ line in robots.txt.",
+      "owner": "DevOps",
+      "timeframe": "NOW"
+    },
+    {
+      "id": "HIST-02",
+      "title": "XML Sitemap Missing Indexable Hub URLs",
+      "category": "TECHNICAL",
+      "severity": "HIGH",
+      "impact": "HIGH",
+      "effort": "LOW",
+      "priority": "P1",
+      "status": "OPEN",
+      "rootCause": "CMS sitemap generator plugin failed during automated build deploy.",
+      "affectedUrls": ["https://nuviraspace.com/sitemap.xml"],
+      "evidenceIds": ["EVI-H02"],
+      "recommendedAction": "Re-run sitemap pipeline and verify in GSC sitemap inspector.",
+      "owner": "Web Team",
+      "timeframe": "THIS WEEK"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "EVI-H01",
+      "findingId": "HIST-01",
+      "source": "Robots.txt Validator Agent",
+      "sourceType": "CRAWL_LOG",
+      "url": "https://nuviraspace.com/robots.txt",
+      "timestamp": "2026-08-01T07:12:00Z",
+      "rawMetricValue": "Disallow: /specifications/ present on line 4",
+      "snippet": "Rule blocks user-agents Googlebot and Bingbot from crawling specifications hierarchy.",
+      "verificationStep": "Inspect robots.txt response headers and content."
+    }
+  ],
+  "semanticGraph": {
+    "topicalCenter": {
+      "available": true,
+      "centerEntity": "Commercial In-Space Servicing & Propulsion",
+      "dimensions": ["ISAM", "Satellite Servicing", "Propulsion"],
+      "zones": {
+        "core": ["node-site-root", "entity-orbital-logistics", "entity-space-propulsion"],
+        "relevantPeriphery": ["topic-satellite-servicing", "page-servicing"],
+        "distantOffTopic": ["page-old-blog-facts"]
+      }
+    },
+    "nodes": [
+      {
+        "id": "node-site-root",
+        "label": "NuVira Space Topical Core",
+        "type": "SITE",
+        "status": "STRONG",
+        "url": "https://nuviraspace.com/",
+        "coverageScore": 88,
+        "visibilityScore": 82
+      },
+      {
+        "id": "entity-orbital-logistics",
+        "label": "Orbital Logistics & ISAM",
+        "type": "ENTITY",
+        "status": "STRONG",
+        "coverageScore": 79,
+        "visibilityScore": 75
+      },
+      {
+        "id": "entity-space-propulsion",
+        "label": "Green Spacecraft Propulsion",
+        "type": "ENTITY",
+        "status": "STRONG",
+        "coverageScore": 74,
+        "visibilityScore": 70
+      },
+      {
+        "id": "topic-satellite-servicing",
+        "label": "Satellite Life Extension & Refueling",
+        "type": "TOPIC",
+        "status": "WEAK",
+        "coverageScore": 58,
+        "visibilityScore": 52
+      },
+      {
+        "id": "page-servicing",
+        "label": "/services/satellite-servicing",
+        "type": "PAGE",
+        "status": "WEAK",
+        "url": "https://nuviraspace.com/services/satellite-servicing",
+        "coverageScore": 62,
+        "visibilityScore": 56,
+        "clicks": 1630,
+        "impressions": 34200,
+        "ctr": 4.7,
+        "position": 9.1
+      },
+      {
+        "id": "page-old-blog-facts",
+        "label": "/old-blog/space-junk-facts",
+        "type": "PAGE",
+        "status": "ORPHAN",
+        "url": "https://nuviraspace.com/old-blog/space-junk-facts",
+        "coverageScore": 25,
+        "visibilityScore": 18,
+        "isOrphan": true
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-hist-1",
+        "source": "node-site-root",
+        "target": "entity-orbital-logistics",
+        "relationType": "ENTITY_TO_TOPIC",
+        "relationKind": "semantic relationship"
+      },
+      {
+        "id": "e-hist-2",
+        "source": "entity-orbital-logistics",
+        "target": "topic-satellite-servicing",
+        "relationType": "ENTITY_TO_TOPIC",
+        "relationKind": "content relationship"
+      },
+      {
+        "id": "e-hist-3",
+        "source": "topic-satellite-servicing",
+        "target": "page-servicing",
+        "relationType": "SUBTOPIC_TO_PAGE",
+        "relationKind": "content relationship"
+      }
+    ]
+  },
+  "topicClusters": [],
+  "contentGaps": [],
+  "internalLinking": {
+    "totalLinks": 128,
+    "internalLinksRatio": 0.84,
+    "orphanPages": ["https://nuviraspace.com/old-blog/space-junk-facts"],
+    "hubPages": [],
+    "underlinkedPages": [],
+    "overlinkedPages": [],
+    "brokenLinks": [],
+    "relationships": []
+  },
+  "technical": {
+    "crawlSummary": {
+      "totalCrawled": 42,
+      "indexablePages": 36,
+      "nonIndexablePages": 6,
+      "blockedByRobots": 4,
+      "canonicalMismatches": 2,
+      "redirectCount": 2,
+      "serverErrors": 0
+    },
+    "coreWebVitals": {
+      "lcpSeconds": 2.6,
+      "fidMs": 42,
+      "clsScore": 0.05,
+      "inpMs": 115,
+      "overallStatus": "NEEDS_IMPROVEMENT"
+    },
+    "statusCodes": [
+      { "code": 200, "label": "OK", "count": 36 },
+      { "code": 301, "label": "Moved Permanently", "count": 2 },
+      { "code": 404, "label": "Not Found", "count": 4 }
+    ],
+    "httpSecurityHeaders": [],
+    "robotsTxtStatus": {
+      "valid": false,
+      "sitemapLinked": false,
+      "disallowedRulesCount": 4
+    },
+    "sitemapStatus": {
+      "url": "https://nuviraspace.com/sitemap.xml",
+      "urlsFound": 36,
+      "orphanedInSitemap": 4,
+      "missingFromSitemap": 2,
+      "validXml": true
+    },
+    "mobileParity": {
+      "isResponsive": true,
+      "viewportConfigured": true,
+      "tapTargetIssuesCount": 2,
+      "fontLegibilityPass": true
+    }
+  },
+  "contentAudit": {
+    "summary": {
+      "avgWordCount": 980,
+      "thinContentPagesCount": 4,
+      "duplicateRiskCount": 2,
+      "freshnessWarningCount": 3
+    },
+    "pages": []
+  },
+  "structuredData": [],
+  "eeat": [],
+  "aeo": {
+    "overallAeoReadiness": 58,
+    "llmCitationReadiness": "POOR",
+    "directAnswerProbability": 52,
+    "faqStructurePresent": false,
+    "clearEntityDefinitionsCount": 4,
+    "perplexityCitationIndex": 42,
+    "chatGptRetrievalIndex": 59,
+    "geminiSearchGroundingScore": 60,
+    "bulletPointsAndTablesRatio": 0.12,
+    "actionableInsights": []
+  },
+  "searchPerformance": {
+    "gscAvailable": true,
+    "dateRange": "2026-05-01 to 2026-07-31 (90 Days Prior)",
+    "totalClicks": 29400,
+    "totalImpressions": 591000,
+    "averageCtr": 4.97,
+    "averagePosition": 8.1,
+    "historyTimeline": [],
+    "topPages": [],
+    "topQueries": [],
+    "strikingDistanceKeywords": [],
+    "lowCtrHighImpressionOpportunities": []
+  },
+  "siteArchitecture": []
+}

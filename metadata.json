@@ -1,0 +1,6 @@
+{
+  "name": "SEO Intelligence Command Center",
+  "description": "Permanent visual intelligence and interactive semantic command center for nuviraspace.com multi-agent SEO system.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,2252 @@
+{
+  "metadata": {
+    "siteUrl": "https://nuviraspace.com",
+    "siteName": "NuVira Space",
+    "auditId": "AUD-2026-0901-NUVIRA-01",
+    "auditDate": "2026-09-01",
+    "datasetVersion": "3.8.1-prod",
+    "generatedBy": "Hermes Lead SEO & Specialist Agents v3.8.1",
+    "dataAvailability": {
+      "technical": "AVAILABLE",
+      "semantic": "AVAILABLE",
+      "clusters": "AVAILABLE",
+      "internalLinks": "AVAILABLE",
+      "content": "AVAILABLE",
+      "structuredData": "AVAILABLE",
+      "eeat": "AVAILABLE",
+      "aeo": "AVAILABLE",
+      "gsc": "AVAILABLE",
+      "ga4": "AVAILABLE",
+      "wordpress": "AVAILABLE",
+      "bing": "AVAILABLE",
+      "psi": "AVAILABLE",
+      "embeddings": "AVAILABLE"
+    },
+    "notes": "Full multi-agent audit executed across Chromium headless crawler, NLP entity graph extractor, GSC API 90-day sync, and LLM AEO synthetic citation probe."
+  },
+  "healthScores": {
+    "overall": 74,
+    "technical": 88,
+    "content": 68,
+    "semantic": 72,
+    "internalLinks": 63,
+    "structuredData": 81,
+    "eeat": 77,
+    "aeo": 64,
+    "searchPerformance": 70,
+    "methodologyNote": "Weighted multi-agent index: Technical (20%), Content (15%), Semantic Topology (15%), Internal Graph (15%), Schema (10%), EEAT (10%), AEO (15%). Calibrated via empirical ranking correlations, not speculative third-party domain scores."
+  },
+  "executiveTakeaway": {
+    "whatIsWrong": [
+      "Satellite Life Extension pillar lacks bidirectional contextual internal links from high-authority propulsion cluster pages, stranding 38% of PageRank equity.",
+      "Commercial Space Station Modules pages are suffering from thin technical documentation (<650 words) with missing TechArticle schema, suppressing ranking in striking distance (positions 11-16).",
+      "4 key conversion pages lack AEO direct-answer summaries (TL;DR query-answering definitions), causing synthetic LLM search engines (Perplexity/Gemini) to cite competitors instead of NuVira Space.",
+      "Orphaned legacy URL (/old-blog/space-junk-facts) leaks internal crawl budget with outdated 2024 orbital debris figures, contradicting current 2026 sustainability whitepapers."
+    ],
+    "whyItMatters": [
+      "NuVira Space is conceding high-intent commercial B2B defense and satellite operator queries ('GEO satellite life extension cost', 'autonomous rendezvous docking payload') to incumbent legacy aerospace contractors.",
+      "LLM Search (AEO) traffic currently accounts for 22% of B2B aerospace discovery; poor direct-answer extraction prevents NuVira Space from appearing in AI-synthesized vendor shortlists.",
+      "The internal linking bottleneck causes Googlebot to spend 42% of crawl allotment on pagination and legacy news rather than high-value mission architecture hubs."
+    ],
+    "whatToDoNext": [
+      "Deploy contextual in-content anchor links from /propulsion/green-chemical and /propulsion/hall-thrusters directly into /services/satellite-servicing using exact descriptive anchors.",
+      "Implement TechArticle and B2B Specification schema on all ViraTug OTV and orbital module pages with explicit 'about' and 'mentions' Wikidata entity IDs.",
+      "Add 80-word LLM-optimized Definition Answer Blocks at the top of all 5 pillar pages to capture Perplexity and Google AI Overview direct citations.",
+      "Execute 301 redirect from /old-blog/space-junk-facts to /sustainability/active-debris-removal with updated 2026 ESA/NASA catalog citations."
+    ]
+  },
+  "issues": [
+    {
+      "id": "ISS-01",
+      "title": "Severe Internal PageRank Bottleneck on Core Satellite Servicing Pillar",
+      "category": "INTERNAL_LINKS",
+      "severity": "CRITICAL",
+      "impact": "HIGH",
+      "effort": "LOW",
+      "priority": "P0",
+      "status": "OPEN",
+      "rootCause": "Satellite Servicing pillar URL is only linked from global top nav and has 0 contextual body links from propulsion cluster and mission case studies.",
+      "affectedUrls": [
+        "https://nuviraspace.com/services/satellite-servicing",
+        "https://nuviraspace.com/case-studies/geo-refueling-mission"
+      ],
+      "evidenceIds": ["EVI-03", "EVI-04"],
+      "recommendedAction": "Inject 4 contextual descriptive text links from green-propulsion and OTV technical overview into the satellite servicing pillar.",
+      "owner": "Content & Web Eng Team",
+      "estimatedTrafficGain": "+2,400 monthly organic visits",
+      "timeframe": "NOW"
+    },
+    {
+      "id": "ISS-02",
+      "title": "Missing Direct-Answer AEO Definitions for AI Search Engine Retrieval",
+      "category": "AEO",
+      "severity": "HIGH",
+      "impact": "HIGH",
+      "effort": "LOW",
+      "priority": "P0",
+      "status": "OPEN",
+      "rootCause": "Pillar content opens with marketing fluff rather than concise 50-word entity definitions and quantifiable performance tables required by RAG pipelines.",
+      "affectedUrls": [
+        "https://nuviraspace.com/technology/orbital-transfer-vehicle",
+        "https://nuviraspace.com/infrastructure/station-modules",
+        "https://nuviraspace.com/sustainability/active-debris-removal"
+      ],
+      "evidenceIds": ["EVI-07", "EVI-08"],
+      "recommendedAction": "Implement Structured Executive Summary boxes with direct entity definitions, primary specifications, and FAQ schema.",
+      "owner": "Technical Content Lead",
+      "estimatedTrafficGain": "+3,800 AI citation impressions",
+      "timeframe": "NOW"
+    },
+    {
+      "id": "ISS-03",
+      "title": "Commercial Space Station Modules Sits in Striking Distance (Pos 12.4)",
+      "category": "CONTENT",
+      "severity": "HIGH",
+      "impact": "HIGH",
+      "effort": "MEDIUM",
+      "priority": "P1",
+      "status": "OPEN",
+      "rootCause": "Page contains only 580 words of introductory marketing copy and lacks technical interface specifications (berthing mechanisms, power bus specs, microgravity vibration levels).",
+      "affectedUrls": [
+        "https://nuviraspace.com/infrastructure/station-modules"
+      ],
+      "evidenceIds": ["EVI-09", "EVI-10"],
+      "recommendedAction": "Expand content depth to 1,800 words, including NASA COTS interoperability table and microgravity research payload envelope.",
+      "owner": "Mission Architecture Subject Specialist",
+      "estimatedTrafficGain": "+1,650 clicks / month",
+      "timeframe": "THIS WEEK"
+    },
+    {
+      "id": "ISS-04",
+      "title": "Missing Organization & TechArticle Structured Data on Key Engineering Pages",
+      "category": "STRUCTURED_DATA",
+      "severity": "HIGH",
+      "impact": "MEDIUM",
+      "effort": "LOW",
+      "priority": "P1",
+      "status": "OPEN",
+      "rootCause": "Engineering whitepapers and tech specs pages only have basic WebPage schema without author credentials, TechArticle attributes, or Wikidata entity mapping.",
+      "affectedUrls": [
+        "https://nuviraspace.com/specifications/viratug-specs",
+        "https://nuviraspace.com/propulsion/green-chemical"
+      ],
+      "evidenceIds": ["EVI-05", "EVI-06"],
+      "recommendedAction": "Deploy JSON-LD with TechArticle schema, specifying 'about' entities pointing to Q11229 (Spacecraft propulsion) and Q131559 (Orbit).",
+      "owner": "Frontend Developer",
+      "estimatedTrafficGain": "Rich snippet enhancement across 12 high-intent queries",
+      "timeframe": "THIS WEEK"
+    },
+    {
+      "id": "ISS-05",
+      "title": "Orphaned Legacy Article with Deprecated 2024 Data Confusing Search Crawlers",
+      "category": "TECHNICAL",
+      "severity": "MEDIUM",
+      "impact": "MEDIUM",
+      "effort": "LOW",
+      "priority": "P1",
+      "status": "OPEN",
+      "rootCause": "Old post /old-blog/space-junk-facts has 0 inbound internal links but is still indexed and indexed by Bing/Google with stale debris counts.",
+      "affectedUrls": [
+        "https://nuviraspace.com/old-blog/space-junk-facts"
+      ],
+      "evidenceIds": ["EVI-01", "EVI-02"],
+      "recommendedAction": "Implement 301 Permanent Redirect to /sustainability/active-debris-removal and purge from XML sitemap.",
+      "owner": "SEO Operations",
+      "estimatedTrafficGain": "Consolidates 210 historical backlinks into the core sustainability pillar",
+      "timeframe": "THIS WEEK"
+    },
+    {
+      "id": "ISS-06",
+      "title": "E-E-A-T Author Entity Disconnect on Aerospace Propulsion Technical Guides",
+      "category": "EEAT",
+      "severity": "MEDIUM",
+      "impact": "MEDIUM",
+      "effort": "MEDIUM",
+      "priority": "P2",
+      "status": "OPEN",
+      "rootCause": "Propulsion and docking articles are attributed to generic 'NuVira Editorial Team' instead of verified propulsion PhD lead and AIAA fellows.",
+      "affectedUrls": [
+        "https://nuviraspace.com/propulsion/hall-thrusters",
+        "https://nuviraspace.com/propulsion/green-chemical"
+      ],
+      "evidenceIds": ["EVI-11", "EVI-12"],
+      "recommendedAction": "Attribute pages to Dr. Elena Vance (VP Propulsion, ex-JPL) with linked AIAA publications, patent numbers, and verified Person schema.",
+      "owner": "Editorial & Leadership",
+      "estimatedTrafficGain": "Increases E-E-A-T trust weighting for YMYL/Aerospace topics",
+      "timeframe": "THIS MONTH"
+    },
+    {
+      "id": "ISS-07",
+      "title": "Subtopic Content Gap: GEO Graveyard Orbit Relocation Protocols",
+      "category": "SEMANTIC",
+      "severity": "MEDIUM",
+      "impact": "HIGH",
+      "effort": "HIGH",
+      "priority": "P2",
+      "status": "OPEN",
+      "rootCause": "Competitors dominate rankings for 'GEO satellite disposal' and 'graveyard orbit delta-v requirements'; NuVira Space has no dedicated technical page.",
+      "affectedUrls": [
+        "https://nuviraspace.com/services/satellite-servicing"
+      ],
+      "evidenceIds": ["EVI-13"],
+      "recommendedAction": "Publish 2,200-word comprehensive technical guide: 'GEO Graveyard Orbit Disposal vs. In-Situ Life Extension: Economic & Delta-V Trade Study'.",
+      "owner": "Systems Engineering & Content",
+      "estimatedTrafficGain": "+3,100 qualified defense/telecom satellite operator visits",
+      "timeframe": "THIS MONTH"
+    },
+    {
+      "id": "ISS-08",
+      "title": "Suboptimal Core Web Vitals LCP on Mobile for ViraTug 3D Hero Element",
+      "category": "TECHNICAL",
+      "severity": "LOW",
+      "impact": "LOW",
+      "effort": "MEDIUM",
+      "priority": "P3",
+      "status": "OPEN",
+      "rootCause": "Unoptimized 4.2MB WebP video asset loaded in initial viewport on mobile devices causes LCP of 3.4s on 4G emulation.",
+      "affectedUrls": [
+        "https://nuviraspace.com/technology/orbital-transfer-vehicle"
+      ],
+      "evidenceIds": ["EVI-14"],
+      "recommendedAction": "Replace mobile autoplay video with static responsive AVIF poster image and defer 3D canvas loader until user interaction.",
+      "owner": "Web Performance Eng",
+      "estimatedTrafficGain": "Brings mobile CWV pass rate from 68% to 94%",
+      "timeframe": "LATER"
+    },
+    {
+      "id": "ISS-09",
+      "title": "Missing FAQPage Schema on Commercial Mission Pricing Consultation",
+      "category": "STRUCTURED_DATA",
+      "severity": "LOW",
+      "impact": "LOW",
+      "effort": "LOW",
+      "priority": "P3",
+      "status": "OPEN",
+      "rootCause": "Contact and mission booking page has 8 common questions but lacks FAQPage microdata markup.",
+      "affectedUrls": [
+        "https://nuviraspace.com/contact"
+      ],
+      "evidenceIds": ["EVI-15"],
+      "recommendedAction": "Add valid schema.org/FAQPage JSON-LD snippet with accurate answers regarding launch licensing and ITAR compliance.",
+      "owner": "Web Developer",
+      "estimatedTrafficGain": "Accordion rich results in SERP",
+      "timeframe": "LATER"
+    },
+    {
+      "id": "ISS-10",
+      "title": "Internal Link Distribution Skew Towards Corporate News Rather Than Service Hubs",
+      "category": "INTERNAL_LINKS",
+      "severity": "MEDIUM",
+      "impact": "MEDIUM",
+      "effort": "LOW",
+      "priority": "P2",
+      "status": "OPEN",
+      "rootCause": "Footer and sidebar widgets overlink to deprecated press releases (28 links each) while mission capabilities pages receive only 4-6 links.",
+      "affectedUrls": [
+        "https://nuviraspace.com/services/satellite-servicing",
+        "https://nuviraspace.com/infrastructure/station-modules"
+      ],
+      "evidenceIds": ["EVI-16"],
+      "recommendedAction": "Restructure site footer links to prioritize core topical hubs and limit blog archive widgets to latest 3 articles.",
+      "owner": "Web Design & Architecture",
+      "estimatedTrafficGain": "Rebalances PageRank flow to core commercial offerings",
+      "timeframe": "THIS MONTH"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "EVI-01",
+      "findingId": "ISS-05",
+      "source": "Chromium Crawl Engine #02",
+      "sourceType": "CRAWL_LOG",
+      "url": "https://nuviraspace.com/old-blog/space-junk-facts",
+      "timestamp": "2026-09-01T08:14:22Z",
+      "rawMetricValue": "Inbound internal links: 0 | HTTP Status: 200 OK | Canonical: Self",
+      "snippet": "Discovered via sitemap.xml fallback pass. Page has 0 inbound navigation or body links. Outdated stats: 'Over 27,000 pieces of orbital debris' (2024 citation).",
+      "verificationStep": "Inspect site crawl graph BFS depth: reached only via sitemap entry, not linked in DOM tree."
+    },
+    {
+      "id": "EVI-02",
+      "findingId": "ISS-05",
+      "source": "GSC API 90-Day Inspection",
+      "sourceType": "API_GSC",
+      "url": "https://nuviraspace.com/old-blog/space-junk-facts",
+      "timestamp": "2026-09-01T09:00:15Z",
+      "rawMetricValue": "Last 90d Impressions: 1,420 | Clicks: 32 | Avg Pos: 44.2",
+      "snippet": "Cannibalizes impressions for query 'active space debris removal solutions' from primary pillar /sustainability/active-debris-removal.",
+      "verificationStep": "Run query cannibalization analysis in GSC dataset across top 20 queries."
+    },
+    {
+      "id": "EVI-03",
+      "findingId": "ISS-01",
+      "source": "Internal Graph Topology Analyzer",
+      "sourceType": "SPECIALIST_AGENT",
+      "url": "https://nuviraspace.com/services/satellite-servicing",
+      "timestamp": "2026-09-01T08:22:11Z",
+      "rawMetricValue": "Inbound In-Content Contextual Links: 1 | PageRank Weight: 0.014 (Expected: >0.065)",
+      "snippet": "High-intent commercial URL has only 1 in-content anchor from homepage, missing links from related propulsion topics.",
+      "verificationStep": "Execute NetworkX PageRank algorithm on internal crawl matrix."
+    },
+    {
+      "id": "EVI-04",
+      "findingId": "ISS-01",
+      "source": "Hermes Semantic Link Auditor",
+      "sourceType": "SPECIALIST_AGENT",
+      "url": "https://nuviraspace.com/propulsion/green-chemical",
+      "timestamp": "2026-09-01T08:24:50Z",
+      "rawMetricValue": "Semantic Co-occurrence Score: 0.89 | Missing Anchor: 'satellite life extension refueling'",
+      "snippet": "Paragraph 4 discusses orbital servicing refueling valves without linking to /services/satellite-servicing.",
+      "verificationStep": "NLP cosine similarity check between propulsion paragraph vectors and servicing pillar centroid."
+    },
+    {
+      "id": "EVI-05",
+      "findingId": "ISS-04",
+      "source": "Google Rich Results Tester & Schema Auditor",
+      "sourceType": "SCHEMA_VALIDATOR",
+      "url": "https://nuviraspace.com/specifications/viratug-specs",
+      "timestamp": "2026-09-01T08:35:10Z",
+      "rawMetricValue": "Schema detected: WebPage only | Missing: TechArticle, Product, ItemList",
+      "snippet": "Lacks JSON-LD entity markup for payload mass, delta-V capabilities, and docking interface standard.",
+      "verificationStep": "Validate against schema.org/TechArticle specification."
+    },
+    {
+      "id": "EVI-06",
+      "findingId": "ISS-04",
+      "source": "Hermes Entity Mapper",
+      "sourceType": "SPECIALIST_AGENT",
+      "url": "https://nuviraspace.com/propulsion/green-chemical",
+      "timestamp": "2026-09-01T08:37:44Z",
+      "rawMetricValue": "Wikidata Mentions: 0 | Missing Q-ID: Q11229",
+      "snippet": "Failed to map propellant formulations (ADN / AF-M315E) to knowledge graph entity identifiers.",
+      "verificationStep": "Compare page text named entities against Wikidata KG API."
+    },
+    {
+      "id": "EVI-07",
+      "findingId": "ISS-02",
+      "source": "LLM AEO Synthetic Probe (Perplexity & Gemini 1.5 Grounding)",
+      "sourceType": "SPECIALIST_AGENT",
+      "url": "https://nuviraspace.com/technology/orbital-transfer-vehicle",
+      "timestamp": "2026-09-01T10:12:00Z",
+      "rawMetricValue": "Perplexity Citation Index: 38% | Direct Answer Retention: 14%",
+      "snippet": "Synthetic prompt 'What orbital transfer vehicles offer rideshare to GEO in 2026?' cited Spaceflight Sherpa and Impulse Space; NuVira Space omitted due to prose structure.",
+      "verificationStep": "Execute multi-model RAG test with query set against live web search grounding."
+    },
+    {
+      "id": "EVI-08",
+      "findingId": "ISS-02",
+      "source": "Content Structure Inspector",
+      "sourceType": "HEADLESS_RENDER",
+      "url": "https://nuviraspace.com/infrastructure/station-modules",
+      "timestamp": "2026-09-01T08:40:19Z",
+      "rawMetricValue": "Bullet point ratio: 4% | Table count: 0 | Average sentence length: 26 words",
+      "snippet": "Long dense marketing paragraphs without structured specification callouts make extraction difficult for semantic parsers.",
+      "verificationStep": "DOM query selector on tables, lists, and summary tags."
+    },
+    {
+      "id": "EVI-09",
+      "findingId": "ISS-03",
+      "source": "GSC API 90-Day Inspection",
+      "sourceType": "API_GSC",
+      "url": "https://nuviraspace.com/infrastructure/station-modules",
+      "timestamp": "2026-09-01T09:05:00Z",
+      "rawMetricValue": "Striking distance query: 'commercial space station habitat modules' | Avg Pos: 12.4 | Impressions: 4,890",
+      "snippet": "Page ranks on page 2 (pos 12.4) with 4,890 impressions but only 1.2% CTR (58 clicks). Lifting to pos 3-5 could yield +480 clicks.",
+      "verificationStep": "Filter GSC queries where position between 10.0 and 20.0 and impressions > 1000."
+    },
+    {
+      "id": "EVI-10",
+      "findingId": "ISS-03",
+      "source": "Content Depth Benchmarking Agent",
+      "sourceType": "SPECIALIST_AGENT",
+      "url": "https://nuviraspace.com/infrastructure/station-modules",
+      "timestamp": "2026-09-01T08:48:33Z",
+      "rawMetricValue": "Word Count: 580 words | Competitor Average: 1,840 words",
+      "snippet": "Competitors (Axiom Space, Vast, Nanoracks) detail ECLSS systems, berthing adapters, power availability, and microgravity payload envelopes.",
+      "verificationStep": "Compute average text length and topical n-gram coverage vs top 5 ranking SERP URLs."
+    },
+    {
+      "id": "EVI-11",
+      "findingId": "ISS-06",
+      "source": "Hermes E-E-A-T Auditor",
+      "sourceType": "SPECIALIST_AGENT",
+      "url": "https://nuviraspace.com/propulsion/hall-thrusters",
+      "timestamp": "2026-09-01T09:15:20Z",
+      "rawMetricValue": "Author schema: Absent | Organization byline only | Academic citations: 0",
+      "snippet": "Article covers high-consequence YMYL/aerospace propulsion physics with no accredited author bio or links to published experimental papers.",
+      "verificationStep": "Parse JSON-LD for author Person schema with sameAs links to Google Scholar or LinkedIn."
+    },
+    {
+      "id": "EVI-12",
+      "findingId": "ISS-06",
+      "source": "Entity Authority Verifier",
+      "sourceType": "SPECIALIST_AGENT",
+      "url": "https://nuviraspace.com/team/mission-architecture",
+      "timestamp": "2026-09-01T09:18:00Z",
+      "rawMetricValue": "Team page exists but is isolated from technical content articles",
+      "snippet": "Executive bios exist at /team/mission-architecture but are not bidirectional-linked from technical whitepapers.",
+      "verificationStep": "Graph relationship check between /team/* and /propulsion/*."
+    },
+    {
+      "id": "EVI-13",
+      "findingId": "ISS-07",
+      "source": "Hermes Semantic Gap Classifier",
+      "sourceType": "NLP_EMBEDDING",
+      "url": "https://nuviraspace.com/services/satellite-servicing",
+      "timestamp": "2026-09-01T09:30:12Z",
+      "rawMetricValue": "Topical Coverage Gap: 'GEO Graveyard Orbit Relocation' | Opportunity Index: 88/100",
+      "snippet": "Entities 'Super-synchronous orbit', 'FCC 5-year deorbit rule', and 'graveyard disposal' have 0 matching target URLs on nuviraspace.com.",
+      "verificationStep": "Map cluster expected subtopics against crawled vector space."
+    },
+    {
+      "id": "EVI-14",
+      "findingId": "ISS-08",
+      "source": "Lighthouse Lab Run (Mobile 4G)",
+      "sourceType": "HEADLESS_RENDER",
+      "url": "https://nuviraspace.com/technology/orbital-transfer-vehicle",
+      "timestamp": "2026-09-01T08:05:44Z",
+      "rawMetricValue": "LCP: 3.42s (Threshold: 2.5s) | FCP: 1.1s | CLS: 0.02",
+      "snippet": "Hero video viratug-hero.webp (4.2MB) blocking LCP milestone on simulated Moto G Power connection.",
+      "verificationStep": "Review Lighthouse mobile JSON trace network waterfall."
+    }
+  ],
+  "semanticGraph": {
+    "topicalCenter": {
+      "available": true,
+      "centerEntity": "Commercial In-Space Servicing, Orbital Logistics & Propulsion Infrastructure",
+      "dimensions": [
+        "In-Space Servicing & Manufacturing (ISAM)",
+        "Satellite Life Extension & On-Orbit Refueling",
+        "Orbital Transfer Vehicles & Rideshare",
+        "Green & High-Impulse Spacecraft Propulsion",
+        "Orbital Sustainability & Debris Mitigation"
+      ],
+      "zones": {
+        "core": [
+          "node-site-root",
+          "entity-orbital-logistics",
+          "entity-space-propulsion",
+          "entity-orbital-infrastructure",
+          "topic-satellite-servicing",
+          "topic-space-tugs",
+          "topic-electric-propulsion",
+          "page-servicing",
+          "page-viratug"
+        ],
+        "relevantPeriphery": [
+          "entity-space-debris",
+          "topic-debris-tracking",
+          "topic-station-modules",
+          "subtopic-hydrazine-replacement",
+          "subtopic-docking-adapters",
+          "subtopic-microgravity-rd",
+          "page-green-propulsion",
+          "page-hall-thrusters",
+          "page-station-modules",
+          "page-debris-removal",
+          "page-case-study-geo",
+          "page-viratug-specs",
+          "page-team-architecture"
+        ],
+        "distantOffTopic": [
+          "page-old-blog-facts"
+        ]
+      }
+    },
+    "nodes": [
+      {
+        "id": "node-site-root",
+        "label": "NuVira Space Topical Core",
+        "type": "SITE",
+        "status": "STRONG",
+        "url": "https://nuviraspace.com/",
+        "description": "Enterprise topical anchor: Commercial in-space logistics, satellite life extension, propulsion, and orbital infrastructure.",
+        "coverageScore": 92,
+        "visibilityScore": 86,
+        "searchVisibility": 88,
+        "clicks": 14200,
+        "impressions": 284000,
+        "ctr": 5.0,
+        "position": 4.8,
+        "inboundLinks": 48,
+        "outboundLinks": 16,
+        "contentQuality": 88,
+        "schemaValid": true,
+        "eeatScore": 85,
+        "aeoStatus": "OPTIMIZED",
+        "findingsCount": 0,
+        "findings": [],
+        "semanticDistance": 0.0
+      },
+      {
+        "id": "entity-orbital-logistics",
+        "label": "Orbital Logistics & ISAM",
+        "type": "ENTITY",
+        "status": "STRONG",
+        "description": "Core entity: In-Space Servicing, Assembly, and Manufacturing (ISAM) capabilities and orbital transport.",
+        "coverageScore": 84,
+        "visibilityScore": 80,
+        "searchVisibility": 82,
+        "findingsCount": 1,
+        "findings": ["ISS-01"],
+        "semanticDistance": 0.08
+      },
+      {
+        "id": "entity-space-propulsion",
+        "label": "Green Spacecraft Propulsion",
+        "type": "ENTITY",
+        "status": "STRONG",
+        "description": "Core entity: Non-toxic monopropellants, ADN blends, Hall thrusters, and in-space reaction control.",
+        "coverageScore": 79,
+        "visibilityScore": 74,
+        "searchVisibility": 76,
+        "findingsCount": 2,
+        "findings": ["ISS-04", "ISS-06"],
+        "semanticDistance": 0.12
+      },
+      {
+        "id": "entity-orbital-infrastructure",
+        "label": "Commercial Orbital Infrastructure",
+        "type": "ENTITY",
+        "status": "WEAK",
+        "description": "Core entity: Pressurized habitat modules, microgravity labs, power nodes, and docking nodes.",
+        "coverageScore": 58,
+        "visibilityScore": 49,
+        "searchVisibility": 52,
+        "findingsCount": 1,
+        "findings": ["ISS-03"],
+        "semanticDistance": 0.18
+      },
+      {
+        "id": "entity-space-debris",
+        "label": "Orbital Sustainability & Debris Mitigation",
+        "type": "ENTITY",
+        "status": "COVERED",
+        "description": "Secondary entity: Active debris removal (ADR), graveyard deorbit, and space situational awareness.",
+        "coverageScore": 71,
+        "visibilityScore": 65,
+        "searchVisibility": 68,
+        "findingsCount": 2,
+        "findings": ["ISS-05", "ISS-07"],
+        "semanticDistance": 0.26
+      },
+      {
+        "id": "topic-satellite-servicing",
+        "label": "Satellite Life Extension & Refueling",
+        "type": "TOPIC",
+        "status": "WEAK",
+        "description": "Commercial GEO & LEO satellite refueling, client capture, and orbital life extension missions.",
+        "clusterId": "cluster-servicing-refuel",
+        "coverageScore": 64,
+        "visibilityScore": 58,
+        "searchVisibility": 62,
+        "findingsCount": 2,
+        "findings": ["ISS-01", "ISS-07"],
+        "semanticDistance": 0.14
+      },
+      {
+        "id": "topic-space-tugs",
+        "label": "Orbital Transfer Vehicles (OTV)",
+        "type": "TOPIC",
+        "status": "STRONG",
+        "description": "Dedicated last-mile space tugs transferring payloads from Falcon 9 / Vulcan drop-off to custom orbits.",
+        "clusterId": "cluster-otv-logistics",
+        "coverageScore": 86,
+        "visibilityScore": 81,
+        "searchVisibility": 84,
+        "findingsCount": 2,
+        "findings": ["ISS-02", "ISS-08"],
+        "semanticDistance": 0.11
+      },
+      {
+        "id": "topic-electric-propulsion",
+        "label": "Electric & Green Chemical Propulsion",
+        "type": "TOPIC",
+        "status": "STRONG",
+        "description": "Electric propulsion systems and hydrazine-replacement green thrusters.",
+        "clusterId": "cluster-green-propulsion",
+        "coverageScore": 82,
+        "visibilityScore": 76,
+        "searchVisibility": 78,
+        "findingsCount": 2,
+        "findings": ["ISS-04", "ISS-06"],
+        "semanticDistance": 0.15
+      },
+      {
+        "id": "topic-station-modules",
+        "label": "Commercial Station Habitats",
+        "type": "TOPIC",
+        "status": "WEAK",
+        "description": "LEO commercial space station modules, airlocks, and microgravity research racks.",
+        "clusterId": "cluster-space-modules",
+        "coverageScore": 52,
+        "visibilityScore": 44,
+        "searchVisibility": 48,
+        "findingsCount": 2,
+        "findings": ["ISS-02", "ISS-03"],
+        "semanticDistance": 0.22
+      },
+      {
+        "id": "topic-debris-tracking",
+        "label": "Active Debris Removal (ADR)",
+        "type": "TOPIC",
+        "status": "OPPORTUNITY",
+        "description": "Robotic capture and controlled atmospheric re-entry for defunct orbital bodies.",
+        "clusterId": "cluster-debris-mitigation",
+        "coverageScore": 68,
+        "visibilityScore": 62,
+        "searchVisibility": 65,
+        "findingsCount": 2,
+        "findings": ["ISS-05", "ISS-07"],
+        "semanticDistance": 0.28
+      },
+      {
+        "id": "cluster-servicing-refuel",
+        "label": "Satellite Servicing Cluster",
+        "type": "CLUSTER",
+        "status": "WEAK",
+        "description": "Pillar hub cluster covering GEO life extension, robotic docking, and propellant transfer.",
+        "coverageScore": 66,
+        "visibilityScore": 60,
+        "findingsCount": 2,
+        "findings": ["ISS-01", "ISS-07"],
+        "semanticDistance": 0.15
+      },
+      {
+        "id": "cluster-otv-logistics",
+        "label": "ViraTug OTV Logistics Cluster",
+        "type": "CLUSTER",
+        "status": "STRONG",
+        "description": "Pillar hub cluster covering rideshare, payload separation, and orbit raising.",
+        "coverageScore": 88,
+        "visibilityScore": 83,
+        "findingsCount": 2,
+        "findings": ["ISS-02", "ISS-08"],
+        "semanticDistance": 0.12
+      },
+      {
+        "id": "cluster-green-propulsion",
+        "label": "Green Propulsion Cluster",
+        "type": "CLUSTER",
+        "status": "STRONG",
+        "description": "Pillar hub cluster covering non-toxic spacecraft propellants and electric Hall thrusters.",
+        "coverageScore": 81,
+        "visibilityScore": 75,
+        "findingsCount": 2,
+        "findings": ["ISS-04", "ISS-06"],
+        "semanticDistance": 0.16
+      },
+      {
+        "id": "cluster-space-modules",
+        "label": "Station Modules Cluster",
+        "type": "CLUSTER",
+        "status": "WEAK",
+        "description": "Commercial space station research modules, life support interfaces, and power pods.",
+        "coverageScore": 55,
+        "visibilityScore": 46,
+        "findingsCount": 2,
+        "findings": ["ISS-02", "ISS-03"],
+        "semanticDistance": 0.24
+      },
+      {
+        "id": "cluster-debris-mitigation",
+        "label": "Debris Mitigation Cluster",
+        "type": "CLUSTER",
+        "status": "COVERED",
+        "description": "LEO debris mitigation, deorbit kits, and graveyard maneuvering.",
+        "coverageScore": 72,
+        "visibilityScore": 64,
+        "findingsCount": 2,
+        "findings": ["ISS-05", "ISS-07"],
+        "semanticDistance": 0.29
+      },
+      {
+        "id": "subtopic-hydrazine-replacement",
+        "label": "Non-Toxic Monopropellant Blends",
+        "type": "SUBTOPIC",
+        "status": "STRONG",
+        "clusterId": "cluster-green-propulsion",
+        "coverageScore": 85,
+        "visibilityScore": 80,
+        "semanticDistance": 0.18
+      },
+      {
+        "id": "subtopic-docking-adapters",
+        "label": "Autonomous Rendezvous & Docking (AR&D)",
+        "type": "SUBTOPIC",
+        "status": "COVERED",
+        "clusterId": "cluster-servicing-refuel",
+        "coverageScore": 74,
+        "visibilityScore": 68,
+        "semanticDistance": 0.17
+      },
+      {
+        "id": "subtopic-last-mile-orbital",
+        "label": "Last-Mile Payload Insertion",
+        "type": "SUBTOPIC",
+        "status": "STRONG",
+        "clusterId": "cluster-otv-logistics",
+        "coverageScore": 90,
+        "visibilityScore": 85,
+        "semanticDistance": 0.13
+      },
+      {
+        "id": "subtopic-microgravity-rd",
+        "label": "Pharma & Crystals Microgravity Labs",
+        "type": "SUBTOPIC",
+        "status": "WEAK",
+        "clusterId": "cluster-space-modules",
+        "coverageScore": 48,
+        "visibilityScore": 40,
+        "semanticDistance": 0.26
+      },
+      {
+        "id": "subtopic-adr-grapple",
+        "label": "Robotic Grapple Arms for Space Debris",
+        "type": "SUBTOPIC",
+        "status": "COVERED",
+        "clusterId": "cluster-debris-mitigation",
+        "coverageScore": 70,
+        "visibilityScore": 63,
+        "semanticDistance": 0.31
+      },
+      {
+        "id": "subtopic-geo-relocation",
+        "label": "GEO Graveyard Orbit Relocation Protocols",
+        "type": "SUBTOPIC",
+        "status": "MISSING",
+        "clusterId": "cluster-servicing-refuel",
+        "coverageScore": 0,
+        "visibilityScore": 0,
+        "findingsCount": 1,
+        "findings": ["ISS-07"],
+        "semanticDistance": 0.33
+      },
+      {
+        "id": "page-servicing",
+        "label": "/services/satellite-servicing",
+        "type": "PAGE",
+        "status": "WEAK",
+        "url": "https://nuviraspace.com/services/satellite-servicing",
+        "clusterId": "cluster-servicing-refuel",
+        "description": "Satellite Life Extension, In-Orbit Refueling & Robotic Inspection Services",
+        "coverageScore": 68,
+        "visibilityScore": 61,
+        "searchVisibility": 64,
+        "clicks": 1820,
+        "impressions": 38400,
+        "ctr": 4.7,
+        "position": 8.4,
+        "inboundLinks": 6,
+        "outboundLinks": 8,
+        "contentQuality": 76,
+        "schemaValid": true,
+        "eeatScore": 79,
+        "aeoStatus": "PARTIAL",
+        "findingsCount": 1,
+        "findings": ["ISS-01"],
+        "evidenceIds": ["EVI-03", "EVI-04"],
+        "semanticDistance": 0.14
+      },
+      {
+        "id": "page-viratug",
+        "label": "/technology/orbital-transfer-vehicle",
+        "type": "PAGE",
+        "status": "STRONG",
+        "url": "https://nuviraspace.com/technology/orbital-transfer-vehicle",
+        "clusterId": "cluster-otv-logistics",
+        "description": "ViraTug Space Tug: High Delta-V Rideshare & Orbital Plane Insertion",
+        "coverageScore": 89,
+        "visibilityScore": 84,
+        "searchVisibility": 86,
+        "clicks": 3410,
+        "impressions": 58900,
+        "ctr": 5.8,
+        "position": 5.2,
+        "inboundLinks": 14,
+        "outboundLinks": 11,
+        "contentQuality": 86,
+        "schemaValid": true,
+        "eeatScore": 82,
+        "aeoStatus": "PARTIAL",
+        "findingsCount": 2,
+        "findings": ["ISS-02", "ISS-08"],
+        "evidenceIds": ["EVI-07", "EVI-14"],
+        "semanticDistance": 0.12
+      },
+      {
+        "id": "page-green-propulsion",
+        "label": "/propulsion/green-chemical",
+        "type": "PAGE",
+        "status": "STRONG",
+        "url": "https://nuviraspace.com/propulsion/green-chemical",
+        "clusterId": "cluster-green-propulsion",
+        "description": "High-Performance Non-Toxic Monopropellant Propulsion Engines",
+        "coverageScore": 84,
+        "visibilityScore": 79,
+        "searchVisibility": 80,
+        "clicks": 2150,
+        "impressions": 42100,
+        "ctr": 5.1,
+        "position": 6.7,
+        "inboundLinks": 11,
+        "outboundLinks": 7,
+        "contentQuality": 84,
+        "schemaValid": false,
+        "eeatScore": 74,
+        "aeoStatus": "OPTIMIZED",
+        "findingsCount": 2,
+        "findings": ["ISS-04", "ISS-06"],
+        "evidenceIds": ["EVI-04", "EVI-06", "EVI-12"],
+        "semanticDistance": 0.16
+      },
+      {
+        "id": "page-hall-thrusters",
+        "label": "/propulsion/hall-thrusters",
+        "type": "PAGE",
+        "status": "STRONG",
+        "url": "https://nuviraspace.com/propulsion/hall-thrusters",
+        "clusterId": "cluster-green-propulsion",
+        "description": "High Specific Impulse Low-Power Electric Hall Thrusters for SmallSats",
+        "coverageScore": 81,
+        "visibilityScore": 76,
+        "searchVisibility": 77,
+        "clicks": 1690,
+        "impressions": 31200,
+        "ctr": 5.4,
+        "position": 7.1,
+        "inboundLinks": 9,
+        "outboundLinks": 6,
+        "contentQuality": 81,
+        "schemaValid": true,
+        "eeatScore": 71,
+        "aeoStatus": "PARTIAL",
+        "findingsCount": 1,
+        "findings": ["ISS-06"],
+        "evidenceIds": ["EVI-11"],
+        "semanticDistance": 0.17
+      },
+      {
+        "id": "page-station-modules",
+        "label": "/infrastructure/station-modules",
+        "type": "PAGE",
+        "status": "WEAK",
+        "url": "https://nuviraspace.com/infrastructure/station-modules",
+        "clusterId": "cluster-space-modules",
+        "description": "Modular Commercial Space Station Habitats & Research Airlocks",
+        "coverageScore": 54,
+        "visibilityScore": 46,
+        "searchVisibility": 48,
+        "clicks": 880,
+        "impressions": 24900,
+        "ctr": 3.5,
+        "position": 12.4,
+        "inboundLinks": 5,
+        "outboundLinks": 4,
+        "contentQuality": 62,
+        "schemaValid": true,
+        "eeatScore": 73,
+        "aeoStatus": "UNREADY",
+        "findingsCount": 2,
+        "findings": ["ISS-02", "ISS-03"],
+        "evidenceIds": ["EVI-08", "EVI-09", "EVI-10"],
+        "semanticDistance": 0.23
+      },
+      {
+        "id": "page-debris-removal",
+        "label": "/sustainability/active-debris-removal",
+        "type": "PAGE",
+        "status": "COVERED",
+        "url": "https://nuviraspace.com/sustainability/active-debris-removal",
+        "clusterId": "cluster-debris-mitigation",
+        "description": "Active Orbital Debris Removal (ADR) & Satellite End-of-Life Deorbiting",
+        "coverageScore": 73,
+        "visibilityScore": 66,
+        "searchVisibility": 69,
+        "clicks": 1420,
+        "impressions": 29800,
+        "ctr": 4.8,
+        "position": 8.9,
+        "inboundLinks": 8,
+        "outboundLinks": 6,
+        "contentQuality": 79,
+        "schemaValid": true,
+        "eeatScore": 81,
+        "aeoStatus": "PARTIAL",
+        "findingsCount": 1,
+        "findings": ["ISS-02"],
+        "evidenceIds": ["EVI-01", "EVI-02"],
+        "semanticDistance": 0.27
+      },
+      {
+        "id": "page-case-study-geo",
+        "label": "/case-studies/geo-refueling-mission",
+        "type": "PAGE",
+        "status": "COVERED",
+        "url": "https://nuviraspace.com/case-studies/geo-refueling-mission",
+        "clusterId": "cluster-servicing-refuel",
+        "description": "Flight Heritage Case Study: Commercial GEO Sat Life Extension Mission",
+        "coverageScore": 76,
+        "visibilityScore": 70,
+        "searchVisibility": 72,
+        "clicks": 940,
+        "impressions": 18200,
+        "ctr": 5.2,
+        "position": 6.9,
+        "inboundLinks": 4,
+        "outboundLinks": 3,
+        "contentQuality": 88,
+        "schemaValid": true,
+        "eeatScore": 91,
+        "aeoStatus": "OPTIMIZED",
+        "findingsCount": 0,
+        "findings": [],
+        "semanticDistance": 0.20
+      },
+      {
+        "id": "page-viratug-specs",
+        "label": "/specifications/viratug-specs",
+        "type": "PAGE",
+        "status": "COVERED",
+        "url": "https://nuviraspace.com/specifications/viratug-specs",
+        "clusterId": "cluster-otv-logistics",
+        "description": "ViraTug Orbital Transfer Vehicle Technical Specifications & Delta-V Map",
+        "coverageScore": 82,
+        "visibilityScore": 77,
+        "searchVisibility": 79,
+        "clicks": 1150,
+        "impressions": 22400,
+        "ctr": 5.1,
+        "position": 7.4,
+        "inboundLinks": 7,
+        "outboundLinks": 5,
+        "contentQuality": 85,
+        "schemaValid": false,
+        "eeatScore": 86,
+        "aeoStatus": "OPTIMIZED",
+        "findingsCount": 1,
+        "findings": ["ISS-04"],
+        "evidenceIds": ["EVI-05"],
+        "semanticDistance": 0.15
+      },
+      {
+        "id": "page-team-architecture",
+        "label": "/team/mission-architecture",
+        "type": "PAGE",
+        "status": "STRONG",
+        "url": "https://nuviraspace.com/team/mission-architecture",
+        "description": "NuVira Aerospace Engineering Leadership & Systems Architecture Fellows",
+        "coverageScore": 88,
+        "visibilityScore": 82,
+        "searchVisibility": 84,
+        "clicks": 620,
+        "impressions": 11200,
+        "ctr": 5.5,
+        "position": 4.1,
+        "inboundLinks": 12,
+        "outboundLinks": 15,
+        "contentQuality": 92,
+        "schemaValid": true,
+        "eeatScore": 96,
+        "aeoStatus": "OPTIMIZED",
+        "findingsCount": 0,
+        "findings": [],
+        "semanticDistance": 0.19
+      },
+      {
+        "id": "page-contact",
+        "label": "/contact",
+        "type": "PAGE",
+        "status": "COVERED",
+        "url": "https://nuviraspace.com/contact",
+        "description": "Mission Consultation & OTV Payload Booking",
+        "coverageScore": 75,
+        "visibilityScore": 70,
+        "clicks": 810,
+        "impressions": 14500,
+        "ctr": 5.6,
+        "position": 3.8,
+        "inboundLinks": 24,
+        "outboundLinks": 2,
+        "contentQuality": 70,
+        "schemaValid": false,
+        "findingsCount": 1,
+        "findings": ["ISS-09"],
+        "evidenceIds": ["EVI-15"],
+        "semanticDistance": 0.28
+      },
+      {
+        "id": "page-old-blog-facts",
+        "label": "/old-blog/space-junk-facts",
+        "type": "PAGE",
+        "status": "ORPHAN",
+        "url": "https://nuviraspace.com/old-blog/space-junk-facts",
+        "description": "Legacy 2024 Infographic: Space Junk Facts & Figures (Deprecated)",
+        "coverageScore": 25,
+        "visibilityScore": 18,
+        "searchVisibility": 20,
+        "clicks": 32,
+        "impressions": 1420,
+        "ctr": 2.3,
+        "position": 44.2,
+        "inboundLinks": 0,
+        "outboundLinks": 1,
+        "contentQuality": 38,
+        "schemaValid": false,
+        "eeatScore": 40,
+        "aeoStatus": "UNREADY",
+        "findingsCount": 1,
+        "findings": ["ISS-05"],
+        "evidenceIds": ["EVI-01", "EVI-02"],
+        "semanticDistance": 0.68,
+        "isOrphan": true,
+        "isConsolidationCandidate": true
+      }
+    ],
+    "edges": [
+      {
+        "id": "e-site-entity1",
+        "source": "node-site-root",
+        "target": "entity-orbital-logistics",
+        "relationType": "ENTITY_TO_TOPIC",
+        "relationKind": "semantic relationship",
+        "weight": 9
+      },
+      {
+        "id": "e-site-entity2",
+        "source": "node-site-root",
+        "target": "entity-space-propulsion",
+        "relationType": "ENTITY_TO_TOPIC",
+        "relationKind": "semantic relationship",
+        "weight": 9
+      },
+      {
+        "id": "e-site-entity3",
+        "source": "node-site-root",
+        "target": "entity-orbital-infrastructure",
+        "relationType": "ENTITY_TO_TOPIC",
+        "relationKind": "semantic relationship",
+        "weight": 7
+      },
+      {
+        "id": "e-site-entity4",
+        "source": "node-site-root",
+        "target": "entity-space-debris",
+        "relationType": "ENTITY_TO_TOPIC",
+        "relationKind": "semantic relationship",
+        "weight": 7
+      },
+      {
+        "id": "e-ent1-topic1",
+        "source": "entity-orbital-logistics",
+        "target": "topic-satellite-servicing",
+        "relationType": "ENTITY_TO_TOPIC",
+        "relationKind": "content relationship",
+        "weight": 8
+      },
+      {
+        "id": "e-ent1-topic2",
+        "source": "entity-orbital-logistics",
+        "target": "topic-space-tugs",
+        "relationType": "ENTITY_TO_TOPIC",
+        "relationKind": "content relationship",
+        "weight": 9
+      },
+      {
+        "id": "e-ent2-topic3",
+        "source": "entity-space-propulsion",
+        "target": "topic-electric-propulsion",
+        "relationType": "ENTITY_TO_TOPIC",
+        "relationKind": "content relationship",
+        "weight": 9
+      },
+      {
+        "id": "e-ent3-topic4",
+        "source": "entity-orbital-infrastructure",
+        "target": "topic-station-modules",
+        "relationType": "ENTITY_TO_TOPIC",
+        "relationKind": "content relationship",
+        "weight": 8
+      },
+      {
+        "id": "e-ent4-topic5",
+        "source": "entity-space-debris",
+        "target": "topic-debris-tracking",
+        "relationType": "ENTITY_TO_TOPIC",
+        "relationKind": "content relationship",
+        "weight": 8
+      },
+      {
+        "id": "e-topic1-clust1",
+        "source": "topic-satellite-servicing",
+        "target": "cluster-servicing-refuel",
+        "relationType": "TOPIC_TO_CLUSTER",
+        "relationKind": "semantic relationship",
+        "weight": 9
+      },
+      {
+        "id": "e-topic2-clust2",
+        "source": "topic-space-tugs",
+        "target": "cluster-otv-logistics",
+        "relationType": "TOPIC_TO_CLUSTER",
+        "relationKind": "semantic relationship",
+        "weight": 9
+      },
+      {
+        "id": "e-topic3-clust3",
+        "source": "topic-electric-propulsion",
+        "target": "cluster-green-propulsion",
+        "relationType": "TOPIC_TO_CLUSTER",
+        "relationKind": "semantic relationship",
+        "weight": 9
+      },
+      {
+        "id": "e-topic4-clust4",
+        "source": "topic-station-modules",
+        "target": "cluster-space-modules",
+        "relationType": "TOPIC_TO_CLUSTER",
+        "relationKind": "semantic relationship",
+        "weight": 8
+      },
+      {
+        "id": "e-topic5-clust5",
+        "source": "topic-debris-tracking",
+        "target": "cluster-debris-mitigation",
+        "relationType": "TOPIC_TO_CLUSTER",
+        "relationKind": "semantic relationship",
+        "weight": 8
+      },
+      {
+        "id": "e-clust1-sub1",
+        "source": "cluster-servicing-refuel",
+        "target": "subtopic-docking-adapters",
+        "relationType": "CLUSTER_TO_SUBTOPIC",
+        "relationKind": "semantic relationship",
+        "weight": 7
+      },
+      {
+        "id": "e-clust1-sub2",
+        "source": "cluster-servicing-refuel",
+        "target": "subtopic-geo-relocation",
+        "relationType": "CLUSTER_TO_SUBTOPIC",
+        "relationKind": "semantic relationship",
+        "weight": 6
+      },
+      {
+        "id": "e-clust2-sub3",
+        "source": "cluster-otv-logistics",
+        "target": "subtopic-last-mile-orbital",
+        "relationType": "CLUSTER_TO_SUBTOPIC",
+        "relationKind": "semantic relationship",
+        "weight": 8
+      },
+      {
+        "id": "e-clust3-sub4",
+        "source": "cluster-green-propulsion",
+        "target": "subtopic-hydrazine-replacement",
+        "relationType": "CLUSTER_TO_SUBTOPIC",
+        "relationKind": "semantic relationship",
+        "weight": 8
+      },
+      {
+        "id": "e-clust4-sub5",
+        "source": "cluster-space-modules",
+        "target": "subtopic-microgravity-rd",
+        "relationType": "CLUSTER_TO_SUBTOPIC",
+        "relationKind": "semantic relationship",
+        "weight": 6
+      },
+      {
+        "id": "e-clust5-sub6",
+        "source": "cluster-debris-mitigation",
+        "target": "subtopic-adr-grapple",
+        "relationType": "CLUSTER_TO_SUBTOPIC",
+        "relationKind": "semantic relationship",
+        "weight": 7
+      },
+      {
+        "id": "e-sub1-page-serv",
+        "source": "subtopic-docking-adapters",
+        "target": "page-servicing",
+        "relationType": "SUBTOPIC_TO_PAGE",
+        "relationKind": "content relationship",
+        "weight": 8
+      },
+      {
+        "id": "e-sub3-page-vira",
+        "source": "subtopic-last-mile-orbital",
+        "target": "page-viratug",
+        "relationType": "SUBTOPIC_TO_PAGE",
+        "relationKind": "content relationship",
+        "weight": 9
+      },
+      {
+        "id": "e-sub4-page-green",
+        "source": "subtopic-hydrazine-replacement",
+        "target": "page-green-propulsion",
+        "relationType": "SUBTOPIC_TO_PAGE",
+        "relationKind": "content relationship",
+        "weight": 9
+      },
+      {
+        "id": "e-sub5-page-stat",
+        "source": "subtopic-microgravity-rd",
+        "target": "page-station-modules",
+        "relationType": "SUBTOPIC_TO_PAGE",
+        "relationKind": "content relationship",
+        "weight": 7
+      },
+      {
+        "id": "e-sub6-page-deb",
+        "source": "subtopic-adr-grapple",
+        "target": "page-debris-removal",
+        "relationType": "SUBTOPIC_TO_PAGE",
+        "relationKind": "content relationship",
+        "weight": 8
+      },
+      {
+        "id": "e-link-site-vira",
+        "source": "node-site-root",
+        "target": "page-viratug",
+        "relationType": "PAGE_TO_PAGE",
+        "relationKind": "internal-link relationship",
+        "weight": 9,
+        "anchorText": "Explore ViraTug Orbital Transfer Vehicle"
+      },
+      {
+        "id": "e-link-site-serv",
+        "source": "node-site-root",
+        "target": "page-servicing",
+        "relationType": "PAGE_TO_PAGE",
+        "relationKind": "internal-link relationship",
+        "weight": 8,
+        "anchorText": "Satellite Life Extension & Servicing"
+      },
+      {
+        "id": "e-link-vira-specs",
+        "source": "page-viratug",
+        "target": "page-viratug-specs",
+        "relationType": "PAGE_TO_PAGE",
+        "relationKind": "internal-link relationship",
+        "weight": 8,
+        "anchorText": "View ViraTug Delta-V Payload Specifications"
+      },
+      {
+        "id": "e-link-case-serv",
+        "source": "page-case-study-geo",
+        "target": "page-servicing",
+        "relationType": "PAGE_TO_PAGE",
+        "relationKind": "internal-link relationship",
+        "weight": 7,
+        "anchorText": "Commercial In-Orbit Refueling Program"
+      },
+      {
+        "id": "e-link-team-green",
+        "source": "page-team-architecture",
+        "target": "page-green-propulsion",
+        "relationType": "PAGE_TO_PAGE",
+        "relationKind": "internal-link relationship",
+        "weight": 6,
+        "anchorText": "Green Propulsion Architecture Team"
+      },
+      {
+        "id": "e-link-green-hall",
+        "source": "page-green-propulsion",
+        "target": "page-hall-thrusters",
+        "relationType": "PAGE_TO_PAGE",
+        "relationKind": "internal-link relationship",
+        "weight": 6,
+        "anchorText": "Compare with Electric Hall Thrusters"
+      },
+      {
+        "id": "e-link-stat-contact",
+        "source": "page-station-modules",
+        "target": "page-contact",
+        "relationType": "PAGE_TO_PAGE",
+        "relationKind": "internal-link relationship",
+        "weight": 5,
+        "anchorText": "Book Station Payload Slot"
+      }
+    ]
+  },
+  "topicClusters": [
+    {
+      "id": "cluster-servicing-refuel",
+      "name": "Satellite Life Extension & Servicing",
+      "pillarUrl": "https://nuviraspace.com/services/satellite-servicing",
+      "pillarTitle": "Satellite Life Extension, In-Orbit Refueling & Robotic Inspection",
+      "supportingTopicIds": ["topic-satellite-servicing", "subtopic-docking-adapters", "subtopic-geo-relocation"],
+      "supportingPageUrls": [
+        "https://nuviraspace.com/services/satellite-servicing",
+        "https://nuviraspace.com/case-studies/geo-refueling-mission"
+      ],
+      "coverage": 66,
+      "searchVisibility": 61,
+      "traffic": 2760,
+      "impressions": 56600,
+      "clicks": 2760,
+      "avgRanking": 7.6,
+      "opportunityScore": 88,
+      "confidenceScore": 92,
+      "topicHealth": 71,
+      "healthBreakdown": {
+        "coverage": 66,
+        "depth": 72,
+        "connectivity": 54,
+        "visibility": 78,
+        "evidence": 85
+      },
+      "gaps": [
+        {
+          "subtopic": "GEO Graveyard Orbit Relocation Protocols",
+          "reason": "Telecommunications satellite operators require explicit delta-V and risk trade studies between life-extension capture vs deorbiting to graveyard orbit.",
+          "suggestedPageType": "SPECIFICATION",
+          "priority": "P1"
+        }
+      ],
+      "opportunities": [
+        "Interlink case-studies/geo-refueling-mission directly into service pricing table.",
+        "Target striking-distance keyword 'GEO satellite refueling cost' (+1,800 monthly volume)."
+      ]
+    },
+    {
+      "id": "cluster-otv-logistics",
+      "name": "ViraTug Orbital Transfer Vehicles (OTV)",
+      "pillarUrl": "https://nuviraspace.com/technology/orbital-transfer-vehicle",
+      "pillarTitle": "ViraTug Space Tug: High Delta-V Rideshare & Orbital Plane Insertion",
+      "supportingTopicIds": ["topic-space-tugs", "subtopic-last-mile-orbital"],
+      "supportingPageUrls": [
+        "https://nuviraspace.com/technology/orbital-transfer-vehicle",
+        "https://nuviraspace.com/specifications/viratug-specs"
+      ],
+      "coverage": 88,
+      "searchVisibility": 83,
+      "traffic": 4560,
+      "impressions": 81300,
+      "clicks": 4560,
+      "avgRanking": 5.8,
+      "opportunityScore": 72,
+      "confidenceScore": 95,
+      "topicHealth": 84,
+      "healthBreakdown": {
+        "coverage": 88,
+        "depth": 86,
+        "connectivity": 82,
+        "visibility": 84,
+        "evidence": 80
+      },
+      "gaps": [
+        {
+          "subtopic": "Rideshare Compatibility Matrix with Falcon 9 & Ariane 6",
+          "reason": "Smallsat integrators search for ESPA-ring interface tolerances and rideshare launch schedules.",
+          "suggestedPageType": "GUIDE",
+          "priority": "P2"
+        }
+      ],
+      "opportunities": [
+        "Fix mobile LCP video bottleneck on /technology/orbital-transfer-vehicle to protect top 5 rankings.",
+        "Add TechArticle JSON-LD schema with Wikidata entity links."
+      ]
+    },
+    {
+      "id": "cluster-green-propulsion",
+      "name": "Green Spacecraft Propulsion & Hall Thrusters",
+      "pillarUrl": "https://nuviraspace.com/propulsion/green-chemical",
+      "pillarTitle": "High-Performance Non-Toxic Monopropellant Propulsion Engines",
+      "supportingTopicIds": ["topic-electric-propulsion", "subtopic-hydrazine-replacement"],
+      "supportingPageUrls": [
+        "https://nuviraspace.com/propulsion/green-chemical",
+        "https://nuviraspace.com/propulsion/hall-thrusters"
+      ],
+      "coverage": 81,
+      "searchVisibility": 75,
+      "traffic": 3840,
+      "impressions": 73300,
+      "clicks": 3840,
+      "avgRanking": 6.9,
+      "opportunityScore": 76,
+      "confidenceScore": 90,
+      "topicHealth": 79,
+      "healthBreakdown": {
+        "coverage": 81,
+        "depth": 84,
+        "connectivity": 69,
+        "visibility": 77,
+        "evidence": 86
+      },
+      "gaps": [
+        {
+          "subtopic": "Hydrazine vs ASCENT (AF-M315E) Handling Safety Comparison",
+          "reason": "Range safety officers and defense primes require toxicity data sheets and clean-room fueling turnaround times.",
+          "suggestedPageType": "COMPARISON",
+          "priority": "P2"
+        }
+      ],
+      "opportunities": [
+        "Attribute engineering guides to Dr. Elena Vance to lift E-E-A-T trust signals.",
+        "Inject contextual anchor links to Satellite Servicing to fix internal link leak."
+      ]
+    },
+    {
+      "id": "cluster-space-modules",
+      "name": "Commercial Space Station Habitats & ISAM",
+      "pillarUrl": "https://nuviraspace.com/infrastructure/station-modules",
+      "pillarTitle": "Modular Commercial Space Station Habitats & Research Airlocks",
+      "supportingTopicIds": ["topic-station-modules", "subtopic-microgravity-rd"],
+      "supportingPageUrls": [
+        "https://nuviraspace.com/infrastructure/station-modules"
+      ],
+      "coverage": 54,
+      "searchVisibility": 46,
+      "traffic": 880,
+      "impressions": 24900,
+      "clicks": 880,
+      "avgRanking": 12.4,
+      "opportunityScore": 91,
+      "confidenceScore": 88,
+      "topicHealth": 56,
+      "healthBreakdown": {
+        "coverage": 54,
+        "depth": 48,
+        "connectivity": 51,
+        "visibility": 49,
+        "evidence": 76
+      },
+      "gaps": [
+        {
+          "subtopic": "Microgravity Pharmaceutical Protein Crystallization Capabilities",
+          "reason": "Bio-pharma researchers need specifications on thermal control, automated gloveboxes, and sample return cadence.",
+          "suggestedPageType": "CASE_STUDY",
+          "priority": "P1"
+        }
+      ],
+      "opportunities": [
+        "Elevate position from 12.4 to Top 5 by expanding technical depth from 580 words to 1,800+ words.",
+        "Add direct-answer definition blocks for AI search engines (Perplexity/Gemini)."
+      ]
+    },
+    {
+      "id": "cluster-debris-mitigation",
+      "name": "Active Debris Removal (ADR) & Sustainability",
+      "pillarUrl": "https://nuviraspace.com/sustainability/active-debris-removal",
+      "pillarTitle": "Active Orbital Debris Removal (ADR) & Satellite End-of-Life Deorbiting",
+      "supportingTopicIds": ["topic-debris-tracking", "subtopic-adr-grapple"],
+      "supportingPageUrls": [
+        "https://nuviraspace.com/sustainability/active-debris-removal"
+      ],
+      "coverage": 73,
+      "searchVisibility": 66,
+      "traffic": 1420,
+      "impressions": 29800,
+      "clicks": 1420,
+      "avgRanking": 8.9,
+      "opportunityScore": 79,
+      "confidenceScore": 89,
+      "topicHealth": 72,
+      "healthBreakdown": {
+        "coverage": 73,
+        "depth": 75,
+        "connectivity": 62,
+        "visibility": 69,
+        "evidence": 81
+      },
+      "gaps": [
+        {
+          "subtopic": "FCC 5-Year Rule Compliance for LEO Constellation Operators",
+          "reason": "New regulatory enforcement mandates active deorbit capability for post-mission constellations within 5 years.",
+          "suggestedPageType": "GUIDE",
+          "priority": "P1"
+        }
+      ],
+      "opportunities": [
+        "Redirect legacy /old-blog/space-junk-facts to reclaim 210 external authority backlinks.",
+        "Publish interactive Deorbit Delta-V Calculator."
+      ]
+    }
+  ],
+  "contentGaps": [
+    {
+      "id": "GAP-01",
+      "clusterId": "cluster-servicing-refuel",
+      "clusterName": "Satellite Life Extension",
+      "coreTopic": "Commercial In-Space Servicing",
+      "expectedSubtopic": "GEO Graveyard Orbit Relocation & Disposal Economics",
+      "missingPageSuggestedUrl": "https://nuviraspace.com/services/geo-graveyard-orbit-disposal",
+      "suggestedPageType": "SPECIFICATION",
+      "intent": "COMMERCIAL",
+      "reasonItMatters": "Satellite fleet operators evaluating post-mission disposal need quantitative delta-V trade studies against refueling options.",
+      "evidence": "GSC query impressions for 'GEO satellite disposal service' grew +140% QoQ with zero ranking URLs.",
+      "relatedExistingUrls": [
+        "https://nuviraspace.com/services/satellite-servicing",
+        "https://nuviraspace.com/case-studies/geo-refueling-mission"
+      ],
+      "opportunityScore": 92,
+      "searchVolumeEstimate": "1,800/mo (High B2B Value)",
+      "priority": "P1"
+    },
+    {
+      "id": "GAP-02",
+      "clusterId": "cluster-space-modules",
+      "clusterName": "Commercial Space Station Modules",
+      "coreTopic": "Orbital R&D Infrastructure",
+      "expectedSubtopic": "Microgravity Pharmaceutical Crystal Growth Facility Specs",
+      "missingPageSuggestedUrl": "https://nuviraspace.com/infrastructure/microgravity-pharma-lab",
+      "suggestedPageType": "CASE_STUDY",
+      "intent": "COMMERCIAL",
+      "reasonItMatters": "Commercial pharma companies (Merck, Bristol Myers Squibb) actively tender for orbital lab space; NuVira lacks dedicated biomedical specs.",
+      "evidence": "Competitors Axiom Space and Vast capture all top 3 SERP spots for 'microgravity protein crystallization facility'.",
+      "relatedExistingUrls": [
+        "https://nuviraspace.com/infrastructure/station-modules"
+      ],
+      "opportunityScore": 88,
+      "searchVolumeEstimate": "1,200/mo ($45+ CPC equiv)",
+      "priority": "P1"
+    },
+    {
+      "id": "GAP-03",
+      "clusterId": "cluster-debris-mitigation",
+      "clusterName": "Debris Mitigation",
+      "coreTopic": "Space Sustainability",
+      "expectedSubtopic": "FCC 5-Year LEO Deorbit Rule Compliance Guide",
+      "missingPageSuggestedUrl": "https://nuviraspace.com/insights/fcc-5-year-deorbit-rule-compliance",
+      "suggestedPageType": "GUIDE",
+      "intent": "INFORMATIONAL",
+      "reasonItMatters": "LEO constellation managers face regulatory penalties under the new FCC 5-year deorbit mandate; high top-of-funnel lead generator.",
+      "evidence": "Regulatory queries spiking across US and European space law sectors with low organic competition.",
+      "relatedExistingUrls": [
+        "https://nuviraspace.com/sustainability/active-debris-removal"
+      ],
+      "opportunityScore": 85,
+      "searchVolumeEstimate": "2,400/mo",
+      "priority": "P1"
+    },
+    {
+      "id": "GAP-04",
+      "clusterId": "cluster-otv-logistics",
+      "clusterName": "ViraTug OTV Logistics",
+      "coreTopic": "Orbital Transfer Vehicles",
+      "expectedSubtopic": "Falcon 9 Rideshare ESPA-Ring Integration Handbook",
+      "missingPageSuggestedUrl": "https://nuviraspace.com/technology/espa-rideshare-integration-guide",
+      "suggestedPageType": "GUIDE",
+      "intent": "INFORMATIONAL",
+      "reasonItMatters": "Aerospace engineers searching for payload envelope and mechanical load profiles need an authoritative integration manual.",
+      "evidence": "22% of technical downloads on competitor websites stem from mechanical integration guides.",
+      "relatedExistingUrls": [
+        "https://nuviraspace.com/technology/orbital-transfer-vehicle",
+        "https://nuviraspace.com/specifications/viratug-specs"
+      ],
+      "opportunityScore": 80,
+      "searchVolumeEstimate": "1,600/mo",
+      "priority": "P2"
+    },
+    {
+      "id": "GAP-05",
+      "clusterId": "cluster-green-propulsion",
+      "clusterName": "Green Propulsion",
+      "coreTopic": "Spacecraft Propulsion",
+      "expectedSubtopic": "Non-Toxic Monopropellant vs Hydrazine Economic Trade Study",
+      "missingPageSuggestedUrl": "https://nuviraspace.com/propulsion/green-propulsion-vs-hydrazine",
+      "suggestedPageType": "COMPARISON",
+      "intent": "COMMERCIAL",
+      "reasonItMatters": "Purchasers evaluating spacecraft propulsion need quantifiable ground handling cost comparisons between SCAPE suits vs green propellants.",
+      "evidence": "Direct question surfaced in 3 recent sales calls and recorded in AEO queries.",
+      "relatedExistingUrls": [
+        "https://nuviraspace.com/propulsion/green-chemical",
+        "https://nuviraspace.com/propulsion/hall-thrusters"
+      ],
+      "opportunityScore": 83,
+      "searchVolumeEstimate": "1,400/mo",
+      "priority": "P2"
+    }
+  ],
+  "internalLinking": {
+    "totalLinks": 142,
+    "internalLinksRatio": 0.88,
+    "orphanPages": [
+      "https://nuviraspace.com/old-blog/space-junk-facts"
+    ],
+    "hubPages": [
+      {
+        "url": "https://nuviraspace.com/",
+        "title": "NuVira Space Homepage",
+        "inboundCount": 48,
+        "outboundCount": 16
+      },
+      {
+        "url": "https://nuviraspace.com/technology/orbital-transfer-vehicle",
+        "title": "ViraTug Space Tug",
+        "inboundCount": 14,
+        "outboundCount": 11
+      },
+      {
+        "url": "https://nuviraspace.com/team/mission-architecture",
+        "title": "Mission Architecture Leadership",
+        "inboundCount": 12,
+        "outboundCount": 15
+      },
+      {
+        "url": "https://nuviraspace.com/propulsion/green-chemical",
+        "title": "Green Chemical Propulsion",
+        "inboundCount": 11,
+        "outboundCount": 7
+      }
+    ],
+    "underlinkedPages": [
+      {
+        "url": "https://nuviraspace.com/services/satellite-servicing",
+        "title": "Satellite Life Extension Pillar",
+        "inboundCount": 6,
+        "recommendedMin": 18
+      },
+      {
+        "url": "https://nuviraspace.com/infrastructure/station-modules",
+        "title": "Commercial Space Station Modules",
+        "inboundCount": 5,
+        "recommendedMin": 14
+      },
+      {
+        "url": "https://nuviraspace.com/case-studies/geo-refueling-mission",
+        "title": "GEO Satellite Refueling Case Study",
+        "inboundCount": 4,
+        "recommendedMin": 10
+      }
+    ],
+    "overlinkedPages": [
+      {
+        "url": "https://nuviraspace.com/legacy-press/2024-announcement",
+        "outboundCount": 28,
+        "maxRecommended": 8
+      }
+    ],
+    "brokenLinks": [
+      {
+        "sourceUrl": "https://nuviraspace.com/specifications/viratug-specs",
+        "targetUrl": "https://nuviraspace.com/docs/viratug-payload-user-guide-2025.pdf",
+        "anchorText": "Download 2025 Payload User Guide PDF",
+        "statusCode": 404
+      },
+      {
+        "sourceUrl": "https://nuviraspace.com/old-blog/space-junk-facts",
+        "targetUrl": "https://nuviraspace.com/resources/space-debris-tracker",
+        "anchorText": "Live Orbital Debris Visualization",
+        "statusCode": 404
+      }
+    ],
+    "relationships": [
+      {
+        "sourceUrl": "https://nuviraspace.com/",
+        "targetUrl": "https://nuviraspace.com/technology/orbital-transfer-vehicle",
+        "anchorText": "Explore ViraTug Orbital Transfer Vehicle",
+        "isContextual": true,
+        "isNavigational": false,
+        "isFollow": true,
+        "status": "VALID"
+      },
+      {
+        "sourceUrl": "https://nuviraspace.com/",
+        "targetUrl": "https://nuviraspace.com/services/satellite-servicing",
+        "anchorText": "Satellite Life Extension & Servicing",
+        "isContextual": true,
+        "isNavigational": false,
+        "isFollow": true,
+        "status": "VALID"
+      },
+      {
+        "sourceUrl": "https://nuviraspace.com/technology/orbital-transfer-vehicle",
+        "targetUrl": "https://nuviraspace.com/specifications/viratug-specs",
+        "anchorText": "View ViraTug Delta-V Payload Specifications",
+        "isContextual": true,
+        "isNavigational": false,
+        "isFollow": true,
+        "status": "VALID"
+      },
+      {
+        "sourceUrl": "https://nuviraspace.com/propulsion/green-chemical",
+        "targetUrl": "https://nuviraspace.com/propulsion/hall-thrusters",
+        "anchorText": "Compare with Electric Hall Thrusters",
+        "isContextual": true,
+        "isNavigational": false,
+        "isFollow": true,
+        "status": "VALID"
+      },
+      {
+        "sourceUrl": "https://nuviraspace.com/case-studies/geo-refueling-mission",
+        "targetUrl": "https://nuviraspace.com/services/satellite-servicing",
+        "anchorText": "Commercial In-Orbit Refueling Program",
+        "isContextual": true,
+        "isNavigational": false,
+        "isFollow": true,
+        "status": "VALID"
+      },
+      {
+        "sourceUrl": "https://nuviraspace.com/infrastructure/station-modules",
+        "targetUrl": "https://nuviraspace.com/contact",
+        "anchorText": "Book Station Payload Slot",
+        "isContextual": true,
+        "isNavigational": false,
+        "isFollow": true,
+        "status": "VALID"
+      },
+      {
+        "sourceUrl": "https://nuviraspace.com/old-blog/space-junk-facts",
+        "targetUrl": "https://nuviraspace.com/sustainability/active-debris-removal",
+        "anchorText": "Read about active removal",
+        "isContextual": true,
+        "isNavigational": false,
+        "isFollow": true,
+        "status": "ORPHAN"
+      }
+    ]
+  },
+  "technical": {
+    "crawlSummary": {
+      "totalCrawled": 46,
+      "indexablePages": 41,
+      "nonIndexablePages": 5,
+      "blockedByRobots": 2,
+      "canonicalMismatches": 1,
+      "redirectCount": 2,
+      "serverErrors": 0
+    },
+    "coreWebVitals": {
+      "lcpSeconds": 2.1,
+      "fidMs": 32,
+      "clsScore": 0.03,
+      "inpMs": 95,
+      "overallStatus": "PASS"
+    },
+    "statusCodes": [
+      { "code": 200, "label": "OK (Indexable)", "count": 41 },
+      { "code": 301, "label": "Moved Permanently", "count": 2 },
+      { "code": 404, "label": "Not Found", "count": 2 },
+      { "code": 500, "label": "Server Error", "count": 0 }
+    ],
+    "httpSecurityHeaders": [
+      { "header": "Strict-Transport-Security (HSTS)", "status": "PRESENT", "notes": "max-age=63072000; includeSubDomains; preload" },
+      { "header": "Content-Security-Policy (CSP)", "status": "PRESENT", "notes": "Configured with strict nonce" },
+      { "header": "X-Content-Type-Options", "status": "PRESENT", "notes": "nosniff verified" },
+      { "header": "X-Frame-Options", "status": "PRESENT", "notes": "SAMEORIGIN enabled" },
+      { "header": "Permissions-Policy", "status": "PRESENT", "notes": "camera=(), microphone=(), geolocation=()" }
+    ],
+    "robotsTxtStatus": {
+      "valid": true,
+      "sitemapLinked": true,
+      "disallowedRulesCount": 3,
+      "crawlDelay": 0
+    },
+    "sitemapStatus": {
+      "url": "https://nuviraspace.com/sitemap.xml",
+      "urlsFound": 42,
+      "orphanedInSitemap": 1,
+      "missingFromSitemap": 0,
+      "validXml": true
+    },
+    "mobileParity": {
+      "isResponsive": true,
+      "viewportConfigured": true,
+      "tapTargetIssuesCount": 0,
+      "fontLegibilityPass": true
+    }
+  },
+  "contentAudit": {
+    "summary": {
+      "avgWordCount": 1140,
+      "thinContentPagesCount": 2,
+      "duplicateRiskCount": 1,
+      "freshnessWarningCount": 1
+    },
+    "pages": [
+      {
+        "url": "https://nuviraspace.com/",
+        "title": "NuVira Space | Next-Gen Orbital Logistics",
+        "wordCount": 1450,
+        "readabilityScore": 64,
+        "intentAlignment": "HIGH",
+        "duplicateRisk": "NONE",
+        "freshnessDays": 4,
+        "contentQualityScore": 88,
+        "primaryKeyword": "orbital logistics company",
+        "keywordDensity": "1.8%"
+      },
+      {
+        "url": "https://nuviraspace.com/services/satellite-servicing",
+        "title": "Satellite Life Extension, Refueling & Inspection",
+        "wordCount": 1380,
+        "readabilityScore": 68,
+        "intentAlignment": "HIGH",
+        "duplicateRisk": "NONE",
+        "freshnessDays": 12,
+        "contentQualityScore": 76,
+        "primaryKeyword": "satellite life extension servicing",
+        "keywordDensity": "2.1%"
+      },
+      {
+        "url": "https://nuviraspace.com/technology/orbital-transfer-vehicle",
+        "title": "ViraTug Space Tug: High Delta-V Rideshare",
+        "wordCount": 1620,
+        "readabilityScore": 62,
+        "intentAlignment": "HIGH",
+        "duplicateRisk": "NONE",
+        "freshnessDays": 8,
+        "contentQualityScore": 86,
+        "primaryKeyword": "orbital transfer vehicle space tug",
+        "keywordDensity": "2.4%"
+      },
+      {
+        "url": "https://nuviraspace.com/propulsion/green-chemical",
+        "title": "High-Performance Non-Toxic Monopropellant",
+        "wordCount": 1540,
+        "readabilityScore": 58,
+        "intentAlignment": "HIGH",
+        "duplicateRisk": "NONE",
+        "freshnessDays": 14,
+        "contentQualityScore": 84,
+        "primaryKeyword": "green chemical spacecraft propulsion",
+        "keywordDensity": "2.0%"
+      },
+      {
+        "url": "https://nuviraspace.com/infrastructure/station-modules",
+        "title": "Commercial Space Station Habitats",
+        "wordCount": 580,
+        "readabilityScore": 70,
+        "intentAlignment": "MEDIUM",
+        "duplicateRisk": "LOW",
+        "freshnessDays": 45,
+        "contentQualityScore": 62,
+        "primaryKeyword": "commercial space station modules",
+        "keywordDensity": "1.2%"
+      },
+      {
+        "url": "https://nuviraspace.com/sustainability/active-debris-removal",
+        "title": "Active Orbital Debris Removal (ADR)",
+        "wordCount": 1290,
+        "readabilityScore": 65,
+        "intentAlignment": "HIGH",
+        "duplicateRisk": "NONE",
+        "freshnessDays": 18,
+        "contentQualityScore": 79,
+        "primaryKeyword": "active debris removal space sustainability",
+        "keywordDensity": "1.9%"
+      },
+      {
+        "url": "https://nuviraspace.com/old-blog/space-junk-facts",
+        "title": "Legacy 2024 Space Junk Facts & Figures",
+        "wordCount": 390,
+        "readabilityScore": 74,
+        "intentAlignment": "LOW",
+        "duplicateRisk": "HIGH",
+        "freshnessDays": 412,
+        "contentQualityScore": 38,
+        "primaryKeyword": "space debris facts",
+        "keywordDensity": "0.8%"
+      }
+    ]
+  },
+  "structuredData": [
+    {
+      "id": "SCH-01",
+      "url": "https://nuviraspace.com/",
+      "schemaType": "Organization",
+      "isValid": true,
+      "errors": [],
+      "warnings": [],
+      "richSnippetEligible": true,
+      "entitiesLinked": ["Q11229 (Spacecraft propulsion)", "Q40218 (Space station)"]
+    },
+    {
+      "id": "SCH-02",
+      "url": "https://nuviraspace.com/technology/orbital-transfer-vehicle",
+      "schemaType": "TechArticle",
+      "isValid": true,
+      "errors": [],
+      "warnings": ["Missing 'author' bio link, defaulting to Organization"],
+      "richSnippetEligible": true,
+      "entitiesLinked": ["Q843894 (Orbital transfer vehicle)"]
+    },
+    {
+      "id": "SCH-03",
+      "url": "https://nuviraspace.com/services/satellite-servicing",
+      "schemaType": "Service",
+      "isValid": true,
+      "errors": [],
+      "warnings": [],
+      "richSnippetEligible": true,
+      "entitiesLinked": ["Q11229 (Spacecraft)", "Q131559 (Orbit)"]
+    },
+    {
+      "id": "SCH-04",
+      "url": "https://nuviraspace.com/propulsion/green-chemical",
+      "schemaType": "TechArticle",
+      "isValid": false,
+      "errors": ["Missing required field 'headline'", "Invalid dateModified format"],
+      "warnings": ["Wikidata entity links missing in 'about' property"],
+      "richSnippetEligible": false,
+      "entitiesLinked": []
+    },
+    {
+      "id": "SCH-05",
+      "url": "https://nuviraspace.com/specifications/viratug-specs",
+      "schemaType": "Product",
+      "isValid": false,
+      "errors": ["Missing 'offers' or 'hasMeasurement' structure"],
+      "warnings": [],
+      "richSnippetEligible": false,
+      "entitiesLinked": []
+    }
+  ],
+  "eeat": [
+    {
+      "dimension": "EXPERIENCE",
+      "score": 78,
+      "status": "ADEQUATE",
+      "findings": [
+        "Flight heritage demonstrated via 2 in-orbit mission operations logs and telemetry data clips.",
+        "Demonstrated hands-on propellant transfer tests recorded at Edwards AFB vacuum chamber."
+      ],
+      "verifiedEvidence": [
+        "Mission Log ID #GEO-EXT-2025-09 telemetry timestamped",
+        "Clean-room fueling test protocol cert #AFB-VTC-2025"
+      ],
+      "authorProfilesPresent": true,
+      "peerReviewedCitations": 6,
+      "businessAddressVerified": true
+    },
+    {
+      "dimension": "EXPERTISE",
+      "score": 84,
+      "status": "STRONG",
+      "findings": [
+        "Key engineering staff hold multiple Ph.D. degrees in aerospace, propulsion, and astrodynamics.",
+        "Team members serve as active committee members in AIAA and ISO Space Systems standards."
+      ],
+      "verifiedEvidence": [
+        "Dr. Elena Vance AIAA Fellow ID #94821",
+        "Marcus Thorne (CTO) 8 US Space Patents referenced"
+      ],
+      "authorProfilesPresent": true,
+      "peerReviewedCitations": 14,
+      "businessAddressVerified": true
+    },
+    {
+      "dimension": "AUTHORITATIVENESS",
+      "score": 75,
+      "status": "ADEQUATE",
+      "findings": [
+        "Cited by SpaceNews, Aviation Week, and NASA Spinoff reports.",
+        "Recognized by US Space Force Commercial Space Office (COMSO) partnership list."
+      ],
+      "verifiedEvidence": [
+        "SpaceNews editorial feature July 2026",
+        "COMSO Tier-1 Commercial Capability Catalog entry"
+      ],
+      "authorProfilesPresent": true,
+      "peerReviewedCitations": 9,
+      "businessAddressVerified": true
+    },
+    {
+      "dimension": "TRUSTWORTHINESS",
+      "score": 82,
+      "status": "STRONG",
+      "findings": [
+        "ITAR registration and DDTC compliance notices clearly published.",
+        "Physical address in Long Beach Aerospace Corridor verified via California Secretary of State."
+      ],
+      "verifiedEvidence": [
+        "DDTC Registration Code #M-38291",
+        "Physical headquarters lease and Dun & Bradstreet D-U-N-S #08-294-8192"
+      ],
+      "authorProfilesPresent": true,
+      "peerReviewedCitations": 4,
+      "businessAddressVerified": true
+    }
+  ],
+  "aeo": {
+    "overallAeoReadiness": 64,
+    "llmCitationReadiness": "PARTIAL",
+    "directAnswerProbability": 61,
+    "faqStructurePresent": true,
+    "clearEntityDefinitionsCount": 8,
+    "perplexityCitationIndex": 54,
+    "chatGptRetrievalIndex": 68,
+    "geminiSearchGroundingScore": 72,
+    "bulletPointsAndTablesRatio": 0.18,
+    "actionableInsights": [
+      "Add 60-80 word definition callout cards ('What is ViraTug?', 'How does GEO satellite refueling work?') directly beneath H1 tags.",
+      "Convert narrative propellant performance paragraphs into clean markdown-compatible HTML specification tables.",
+      "Implement FAQ schema addressing exact phrasing used in conversational AI prompts (e.g., 'Can NuVira Space refuel a satellite already in orbit?').",
+      "Provide plain-text summaries without marketing adjectives to maximize LLM vector similarity retrieval."
+    ]
+  },
+  "searchPerformance": {
+    "gscAvailable": true,
+    "dateRange": "2026-06-01 to 2026-08-31 (90 Days)",
+    "totalClicks": 34820,
+    "totalImpressions": 684200,
+    "averageCtr": 5.09,
+    "averagePosition": 7.4,
+    "historyTimeline": [
+      { "date": "2026-06-01", "clicks": 280, "impressions": 5800, "ctr": 4.8, "position": 8.2 },
+      { "date": "2026-06-15", "clicks": 310, "impressions": 6400, "ctr": 4.8, "position": 8.0 },
+      { "date": "2026-07-01", "clicks": 360, "impressions": 7200, "ctr": 5.0, "position": 7.8 },
+      { "date": "2026-07-15", "clicks": 395, "impressions": 7900, "ctr": 5.0, "position": 7.5 },
+      { "date": "2026-08-01", "clicks": 430, "impressions": 8600, "ctr": 5.0, "position": 7.4 },
+      { "date": "2026-08-15", "clicks": 470, "impressions": 9200, "ctr": 5.1, "position": 7.3 },
+      { "date": "2026-08-31", "clicks": 510, "impressions": 9900, "ctr": 5.2, "position": 7.1 }
+    ],
+    "topPages": [
+      {
+        "url": "https://nuviraspace.com/",
+        "clicks": 14200,
+        "impressions": 284000,
+        "ctr": 5.0,
+        "position": 4.8,
+        "deltaClicks": 1200
+      },
+      {
+        "url": "https://nuviraspace.com/technology/orbital-transfer-vehicle",
+        "clicks": 3410,
+        "impressions": 58900,
+        "ctr": 5.8,
+        "position": 5.2,
+        "deltaClicks": 480
+      },
+      {
+        "url": "https://nuviraspace.com/propulsion/green-chemical",
+        "clicks": 2150,
+        "impressions": 42100,
+        "ctr": 5.1,
+        "position": 6.7,
+        "deltaClicks": 310
+      },
+      {
+        "url": "https://nuviraspace.com/services/satellite-servicing",
+        "clicks": 1820,
+        "impressions": 38400,
+        "ctr": 4.7,
+        "position": 8.4,
+        "deltaClicks": 190
+      },
+      {
+        "url": "https://nuviraspace.com/propulsion/hall-thrusters",
+        "clicks": 1690,
+        "impressions": 31200,
+        "ctr": 5.4,
+        "position": 7.1,
+        "deltaClicks": 240
+      },
+      {
+        "url": "https://nuviraspace.com/sustainability/active-debris-removal",
+        "clicks": 1420,
+        "impressions": 29800,
+        "ctr": 4.8,
+        "position": 8.9,
+        "deltaClicks": 150
+      },
+      {
+        "url": "https://nuviraspace.com/infrastructure/station-modules",
+        "clicks": 880,
+        "impressions": 24900,
+        "ctr": 3.5,
+        "position": 12.4,
+        "deltaClicks": 60
+      }
+    ],
+    "topQueries": [
+      { "query": "orbital transfer vehicle rideshare", "clicks": 1840, "impressions": 24200, "ctr": 7.6, "position": 3.4 },
+      { "query": "satellite life extension servicing", "clicks": 1290, "impressions": 21400, "ctr": 6.0, "position": 4.2 },
+      { "query": "green spacecraft propulsion thruster", "clicks": 1120, "impressions": 18900, "ctr": 5.9, "position": 4.8 },
+      { "query": "in space refueling commercial", "clicks": 980, "impressions": 17500, "ctr": 5.6, "position": 5.1 },
+      { "query": "active orbital debris removal", "clicks": 890, "impressions": 16200, "ctr": 5.5, "position": 5.4 }
+    ],
+    "strikingDistanceKeywords": [
+      {
+        "query": "commercial space station habitat modules",
+        "url": "https://nuviraspace.com/infrastructure/station-modules",
+        "position": 12.4,
+        "impressions": 4890,
+        "potentialClicks": 480
+      },
+      {
+        "query": "satellite refueling docking mechanism",
+        "url": "https://nuviraspace.com/services/satellite-servicing",
+        "position": 11.8,
+        "impressions": 3620,
+        "potentialClicks": 340
+      },
+      {
+        "query": "GEO orbit life extension mission cost",
+        "url": "https://nuviraspace.com/services/satellite-servicing",
+        "position": 14.1,
+        "impressions": 2940,
+        "potentialClicks": 290
+      },
+      {
+        "query": "non toxic monopropellant thruster flight heritage",
+        "url": "https://nuviraspace.com/propulsion/green-chemical",
+        "position": 13.2,
+        "impressions": 2180,
+        "potentialClicks": 210
+      }
+    ],
+    "lowCtrHighImpressionOpportunities": [
+      {
+        "query": "commercial space station modules",
+        "url": "https://nuviraspace.com/infrastructure/station-modules",
+        "impressions": 24900,
+        "currentCtr": 3.5,
+        "expectedCtr": 7.2,
+        "action": "Rewrite meta title and meta description to feature NASA COTS compatibility and microgravity payload envelopes."
+      },
+      {
+        "query": "spacecraft propulsion manufacturers",
+        "url": "https://nuviraspace.com/propulsion/green-chemical",
+        "impressions": 19400,
+        "currentCtr": 3.8,
+        "expectedCtr": 6.5,
+        "action": "Add explicit SERP hook emphasizing AF-M315E green monopropellant flight heritage."
+      }
+    ]
+  },
+  "siteArchitecture": [
+    {
+      "id": "arch-home",
+      "url": "https://nuviraspace.com/",
+      "title": "NuVira Space Home",
+      "level": 0,
+      "childrenCount": 5,
+      "status": "INDEXABLE"
+    },
+    {
+      "id": "arch-services",
+      "url": "https://nuviraspace.com/services/satellite-servicing",
+      "title": "Services Hub: Satellite Servicing & Life Extension",
+      "level": 1,
+      "parentUrl": "https://nuviraspace.com/",
+      "childrenCount": 2,
+      "status": "INDEXABLE"
+    },
+    {
+      "id": "arch-services-geo",
+      "url": "https://nuviraspace.com/case-studies/geo-refueling-mission",
+      "title": "GEO Refueling Mission Case Study",
+      "level": 2,
+      "parentUrl": "https://nuviraspace.com/services/satellite-servicing",
+      "childrenCount": 0,
+      "status": "INDEXABLE"
+    },
+    {
+      "id": "arch-tech",
+      "url": "https://nuviraspace.com/technology/orbital-transfer-vehicle",
+      "title": "Technology Hub: ViraTug OTV Space Tug",
+      "level": 1,
+      "parentUrl": "https://nuviraspace.com/",
+      "childrenCount": 1,
+      "status": "INDEXABLE"
+    },
+    {
+      "id": "arch-tech-specs",
+      "url": "https://nuviraspace.com/specifications/viratug-specs",
+      "title": "ViraTug Delta-V Payload Specifications",
+      "level": 2,
+      "parentUrl": "https://nuviraspace.com/technology/orbital-transfer-vehicle",
+      "childrenCount": 0,
+      "status": "INDEXABLE"
+    },
+    {
+      "id": "arch-propulsion",
+      "url": "https://nuviraspace.com/propulsion/green-chemical",
+      "title": "Propulsion Hub: Green Chemical Thrusters",
+      "level": 1,
+      "parentUrl": "https://nuviraspace.com/",
+      "childrenCount": 1,
+      "status": "INDEXABLE"
+    },
+    {
+      "id": "arch-prop-hall",
+      "url": "https://nuviraspace.com/propulsion/hall-thrusters",
+      "title": "Electric Hall Thruster Specifications",
+      "level": 2,
+      "parentUrl": "https://nuviraspace.com/propulsion/green-chemical",
+      "childrenCount": 0,
+      "status": "INDEXABLE"
+    },
+    {
+      "id": "arch-infra",
+      "url": "https://nuviraspace.com/infrastructure/station-modules",
+      "title": "Infrastructure Hub: Commercial Space Station Modules",
+      "level": 1,
+      "parentUrl": "https://nuviraspace.com/",
+      "childrenCount": 0,
+      "status": "INDEXABLE"
+    },
+    {
+      "id": "arch-sustain",
+      "url": "https://nuviraspace.com/sustainability/active-debris-removal",
+      "title": "Sustainability Hub: Active Debris Removal",
+      "level": 1,
+      "parentUrl": "https://nuviraspace.com/",
+      "childrenCount": 1,
+      "status": "INDEXABLE"
+    },
+    {
+      "id": "arch-old-blog",
+      "url": "https://nuviraspace.com/old-blog/space-junk-facts",
+      "title": "Legacy Post: Space Junk Facts (Orphan)",
+      "level": 2,
+      "parentUrl": "https://nuviraspace.com/sustainability/active-debris-removal",
+      "childrenCount": 0,
+      "status": "NOINDEX"
+    }
+  ],
+  "comparison": {
+    "baseAuditDate": "2026-08-01",
+    "compareAuditDate": "2026-09-01",
+    "overallScoreDelta": 4,
+    "resolvedIssuesCount": 3,
+    "newIssuesCount": 2,
+    "worseningIssuesCount": 1,
+    "improvingIssuesCount": 4,
+    "newPagesDiscovered": [
+      "https://nuviraspace.com/specifications/viratug-specs"
+    ],
+    "removedPages": [],
+    "changedInternalLinksCount": 14,
+    "topicalCoverageDelta": 6,
+    "diffItems": [
+      {
+        "findingTitle": "XML Sitemap Missing Indexable Hub URLs",
+        "previousStatus": "OPEN",
+        "currentStatus": "RESOLVED",
+        "category": "TECHNICAL",
+        "impact": "HIGH"
+      },
+      {
+        "findingTitle": "Robots.txt Incorrectly Disallowing /specifications/ Directory",
+        "previousStatus": "OPEN",
+        "currentStatus": "RESOLVED",
+        "category": "TECHNICAL",
+        "impact": "HIGH"
+      },
+      {
+        "findingTitle": "Missing Direct-Answer AEO Definitions for AI Search Engine Retrieval",
+        "previousStatus": "NEW",
+        "currentStatus": "OPEN",
+        "category": "AEO",
+        "impact": "HIGH"
+      },
+      {
+        "findingTitle": "Severe Internal PageRank Bottleneck on Core Satellite Servicing Pillar",
+        "previousStatus": "IN_PROGRESS",
+        "currentStatus": "OPEN",
+        "category": "INTERNAL_LINKS",
+        "impact": "HIGH"
+      },
+      {
+        "findingTitle": "Commercial Space Station Modules Sits in Striking Distance (Pos 12.4)",
+        "previousStatus": "OPEN",
+        "currentStatus": "OPEN",
+        "category": "CONTENT",
+        "impact": "HIGH"
+      }
+    ]
+  }
+}

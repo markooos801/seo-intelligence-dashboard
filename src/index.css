@@ -1,0 +1,1325 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+@import "@xyflow/react/dist/style.css";
+
+/* Professional Polish Enterprise Theme */
+:root {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  color-scheme: light;
+}
+
+body {
+  background-color: #f1f5f9;
+  color: #0f172a;
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11", "tnum";
+}
+
+/* ========================================================================= */
+/* KPI DASHBOARD NEUMORPHIC DESIGN SYSTEM - INSPIRED BY REFERENCE SHOWCASE */
+/* ========================================================================= */
+
+/* Refined crisp white raised surface (cards, panels, dialogs) */
+.neu-card, .kpi-card {
+  background-color: #ffffff;
+  border-radius: 1.5rem;
+  box-shadow: 8px 8px 24px rgba(166, 178, 195, 0.28), -8px -8px 24px #ffffff, 0 10px 30px -5px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  transition: all 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neu-card:hover, .kpi-card:hover {
+  box-shadow: 12px 12px 30px rgba(166, 178, 195, 0.35), -12px -12px 30px #ffffff, 0 15px 35px -5px rgba(0, 0, 0, 0.04);
+}
+
+.neu-card-sm, .kpi-card-sm {
+  background-color: #ffffff;
+  border-radius: 1.125rem;
+  box-shadow: 4px 4px 14px rgba(166, 178, 195, 0.22), -4px -4px 14px #ffffff, 0 4px 12px -2px rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  transition: all 150ms ease;
+}
+
+/* Inset sunken surface (inputs, search bars, filter wells, selected states) */
+.neu-inset, .kpi-inset {
+  background-color: #f1f4f8;
+  box-shadow: inset 3px 3px 6px rgba(166, 178, 195, 0.35), inset -3px -3px 6px #ffffff;
+  border: 1px solid rgba(218, 226, 237, 0.85);
+}
+
+.neu-inset-active {
+  background-color: #eaf0f7;
+  box-shadow: inset 2.5px 2.5px 5px rgba(166, 178, 195, 0.45), inset -2.5px -2.5px 5px #ffffff;
+  border: 1px solid rgba(37, 99, 235, 0.4);
+}
+
+/* Interactive neumorphic buttons */
+.neu-btn, .kpi-btn {
+  background-color: #ffffff;
+  box-shadow: 4px 4px 10px rgba(166, 178, 195, 0.28), -4px -4px 10px #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  transition: all 140ms ease-in-out;
+  cursor: pointer;
+}
+
+.neu-btn:hover, .kpi-btn:hover {
+  box-shadow: 5px 5px 14px rgba(166, 178, 195, 0.38), -5px -5px 14px #ffffff;
+  transform: translateY(-1px);
+}
+
+.neu-btn:active, .kpi-btn:active {
+  box-shadow: inset 2px 2px 4px rgba(166, 178, 195, 0.45), inset -2px -2px 4px #ffffff;
+  transform: translateY(0);
+}
+
+.neu-btn-primary, .kpi-btn-primary {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: #ffffff;
+  box-shadow: 4px 4px 14px rgba(37, 99, 235, 0.35), -2px -2px 8px rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(59, 130, 246, 0.6);
+  transition: all 140ms ease-in-out;
+  cursor: pointer;
+}
+
+.neu-btn-primary:hover, .kpi-btn-primary:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  box-shadow: 6px 6px 18px rgba(37, 99, 235, 0.45), -2px -2px 10px rgba(255, 255, 255, 0.7);
+  transform: translateY(-1px);
+}
+
+.neu-btn-primary:active, .kpi-btn-primary:active {
+  box-shadow: inset 2px 2px 5px rgba(15, 23, 42, 0.4);
+  transform: translateY(0);
+}
+
+/* Embossed circular badge (like the top right "19" in image.png) */
+.kpi-embossed-circle {
+  background-color: #f0f3f8;
+  box-shadow: 6px 6px 14px rgba(166, 178, 195, 0.4), -6px -6px 14px #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+}
+
+/* Floating callout pill (like "600 Million" above bar charts in image.png) */
+.kpi-callout-pill {
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 2px 2px 6px rgba(166, 178, 195, 0.25);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* Neumorphic pill/badge */
+.neu-badge {
+  box-shadow: 2px 2px 5px rgba(166, 178, 195, 0.25), -2px -2px 5px #ffffff;
+}
+
+/* Neumorphic data well (charts, tables) */
+.neu-well {
+  background-color: #f1f4f8;
+  box-shadow: inset 2.5px 2.5px 6px rgba(166, 178, 195, 0.3), inset -2.5px -2.5px 6px #ffffff;
+  border: 1px solid rgba(215, 225, 235, 0.7);
+}
+
+code, kbd, samp, pre, .font-mono {
+  font-family: var(--font-mono);
+  font-feature-settings: "tnum", "zero";
+}
+
+/* ========================================================================= */
+/* ========================================================================= */
+/* AUDIT MODE / HIGH-CONTRAST DARK THEME */
+/* ========================================================================= */
+:root.audit-mode,
+:root.dark {
+  color-scheme: dark;
+}
+
+:root.audit-mode body,
+:root.dark body {
+  background-color: #0c121e !important;
+  color: #f8fafc !important;
+}
+
+:root.audit-mode .neu-card,
+:root.audit-mode .kpi-card,
+:root.dark .neu-card,
+:root.dark .kpi-card {
+  background-color: #141c2c !important;
+  box-shadow: 6px 6px 18px rgba(0, 0, 0, 0.65), -4px -4px 14px rgba(255, 255, 255, 0.03) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+:root.audit-mode .neu-card:hover,
+:root.audit-mode .kpi-card:hover,
+:root.dark .neu-card:hover,
+:root.dark .kpi-card:hover {
+  box-shadow: 8px 8px 22px rgba(0, 0, 0, 0.75), -5px -5px 16px rgba(255, 255, 255, 0.05) !important;
+}
+
+:root.audit-mode .neu-card-sm,
+:root.audit-mode .kpi-card-sm,
+:root.dark .neu-card-sm,
+:root.dark .kpi-card-sm {
+  background-color: #141c2c !important;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.55), -3px -3px 9px rgba(255, 255, 255, 0.03) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+:root.audit-mode .neu-inset,
+:root.audit-mode .kpi-inset,
+:root.dark .neu-inset,
+:root.dark .kpi-inset {
+  background-color: #0d131f !important;
+  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.65), inset -2.5px -2.5px 5px rgba(255, 255, 255, 0.03) !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+:root.audit-mode .neu-inset-active,
+:root.dark .neu-inset-active {
+  background-color: #111a2a !important;
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.7), inset -2px -2px 4px rgba(255, 255, 255, 0.04) !important;
+  border-color: rgba(59, 130, 246, 0.45) !important;
+}
+
+:root.audit-mode .neu-btn,
+:root.audit-mode .kpi-btn,
+:root.dark .neu-btn,
+:root.dark .kpi-btn {
+  background-color: #151e2e !important;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.55), -3px -3px 8px rgba(255, 255, 255, 0.04) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #f8fafc !important;
+}
+
+:root.audit-mode .neu-btn:hover,
+:root.audit-mode .kpi-btn:hover,
+:root.dark .neu-btn:hover,
+:root.dark .kpi-btn:hover {
+  box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.7), -4px -4px 10px rgba(255, 255, 255, 0.06) !important;
+}
+
+:root.audit-mode .kpi-embossed-circle,
+:root.dark .kpi-embossed-circle {
+  background-color: #141f33 !important;
+  box-shadow: 6px 6px 14px rgba(0, 0, 0, 0.7), -6px -6px 14px rgba(255, 255, 255, 0.03) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  color: #f8fafc !important;
+}
+
+:root.audit-mode .kpi-callout-pill,
+:root.dark .kpi-callout-pill {
+  background-color: #18233a !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  color: #f8fafc !important;
+}
+
+:root.audit-mode .neu-well,
+:root.dark .neu-well {
+  background-color: #0b111c !important;
+  box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.65), inset -2px -2px 6px rgba(255, 255, 255, 0.03) !important;
+  border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Base Surfaces in Dark / Audit Mode */
+:root.audit-mode .bg-[#edf2f7],
+:root.dark .bg-[#edf2f7],
+:root.audit-mode .bg-[#eef2f6],
+:root.dark .bg-[#eef2f6],
+:root.audit-mode .bg-[#f0f3f8],
+:root.dark .bg-[#f0f3f8],
+:root.audit-mode .bg-[#f1f4f8],
+:root.dark .bg-[#f1f4f8],
+:root.audit-mode .bg-[#e8edf3],
+:root.dark .bg-[#e8edf3],
+:root.audit-mode .bg-[#e8edf4],
+:root.dark .bg-[#e8edf4],
+:root.audit-mode .bg-[#e4ebf3],
+:root.dark .bg-[#e4ebf3],
+:root.audit-mode .bg-[#e2e8f1],
+:root.dark .bg-[#e2e8f1],
+:root.audit-mode .bg-[#e7ecf2],
+:root.dark .bg-[#e7ecf2],
+:root.audit-mode .bg-[#dce3ee],
+:root.dark .bg-[#dce3ee],
+:root.audit-mode .bg-[#d4dce7],
+:root.dark .bg-[#d4dce7] {
+  background-color: #0c121e !important;
+}
+
+:root.audit-mode .bg-white,
+:root.dark .bg-white {
+  background-color: #0f172a !important;
+  color: #f8fafc;
+}
+
+:root.audit-mode .bg-white\/95,
+:root.dark .bg-white\/95,
+:root.audit-mode .bg-white\/90,
+:root.dark .bg-white\/90 {
+  background-color: rgba(15, 23, 42, 0.95) !important;
+}
+
+:root.audit-mode .bg-white\/80,
+:root.dark .bg-white\/80,
+:root.audit-mode .bg-white\/70,
+:root.dark .bg-white\/70,
+:root.audit-mode .bg-white\/60,
+:root.dark .bg-white\/60,
+:root.audit-mode .bg-white\/50,
+:root.dark .bg-white\/50 {
+  background-color: rgba(15, 23, 42, 0.85) !important;
+}
+
+:root.audit-mode .bg-slate-50,
+:root.dark .bg-slate-50 {
+  background-color: #090d16 !important;
+}
+
+:root.audit-mode .bg-slate-50\/30,
+:root.dark .bg-slate-50\/30,
+:root.audit-mode .bg-slate-50\/40,
+:root.dark .bg-slate-50\/40,
+:root.audit-mode .bg-slate-50\/50,
+:root.dark .bg-slate-50\/50,
+:root.audit-mode .bg-slate-50\/60,
+:root.dark .bg-slate-50\/60,
+:root.audit-mode .bg-slate-50\/70,
+:root.dark .bg-slate-50\/70,
+:root.audit-mode .bg-slate-50\/80,
+:root.dark .bg-slate-50\/80 {
+  background-color: #0d1424 !important;
+}
+
+:root.audit-mode .bg-slate-100,
+:root.dark .bg-slate-100 {
+  background-color: #1a2336 !important;
+}
+
+:root.audit-mode .bg-slate-200,
+:root.dark .bg-slate-200,
+:root.audit-mode .bg-slate-200\/80,
+:root.dark .bg-slate-200\/80 {
+  background-color: #26334a !important;
+}
+
+/* Borders in Dark / Audit Mode */
+:root.audit-mode .border-slate-100,
+:root.dark .border-slate-100 {
+  border-color: #1a2336 !important;
+}
+
+:root.audit-mode .border-slate-200,
+:root.dark .border-slate-200,
+:root.audit-mode .border-slate-200\/60,
+:root.dark .border-slate-200\/60,
+:root.audit-mode .border-slate-200\/80,
+:root.dark .border-slate-200\/80,
+:root.audit-mode .border-slate-200\/90,
+:root.dark .border-slate-200\/90 {
+  border-color: #243147 !important;
+}
+
+:root.audit-mode .border-slate-300,
+:root.dark .border-slate-300,
+:root.audit-mode .border-slate-300\/70,
+:root.dark .border-slate-300\/70,
+:root.audit-mode .border-slate-300\/80,
+:root.dark .border-slate-300\/80 {
+  border-color: #364661 !important;
+}
+
+:root.audit-mode .border-[#d4dce7],
+:root.dark .border-[#d4dce7],
+:root.audit-mode .border-[#cbd5e1],
+:root.dark .border-[#cbd5e1],
+:root.audit-mode .border-[#e2e8f1],
+:root.dark .border-[#e2e8f1] {
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+:root.audit-mode .divide-slate-100 > * + *,
+:root.dark .divide-slate-100 > * + * {
+  border-color: #1a2336 !important;
+}
+
+:root.audit-mode .divide-slate-200 > * + *,
+:root.dark .divide-slate-200 > * + *,
+:root.audit-mode .divide-[#d4dce7] > * + *,
+:root.dark .divide-[#d4dce7] > * + * {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Typography Contrast Guarantees in Dark Mode */
+:root.dark .text-slate-950,
+:root.dark .text-slate-900,
+:root.dark .text-[#131b26],
+:root.dark .text-[#0f172a],
+:root.dark .text-black {
+  color: #f8fafc;
+}
+
+:root.dark .text-slate-800,
+:root.dark .text-[#1e293b],
+:root.dark .text-gray-900,
+:root.dark .text-gray-800 {
+  color: #f1f5f9;
+}
+
+:root.dark .text-slate-700,
+:root.dark .text-[#334155],
+:root.dark .text-gray-700 {
+  color: #e2e8f0;
+}
+
+:root.dark .text-slate-600,
+:root.dark .text-[#475569],
+:root.dark .text-gray-600 {
+  color: #cbd5e1;
+}
+
+/* Keep pure white text on solid buttons/badges intact */
+:root.dark .text-white {
+  color: #ffffff;
+}
+
+/* TINTED STATUS & CARD STYLING (Rose / Critical / Red) */
+:root.audit-mode .bg-rose-50,
+:root.dark .bg-rose-50,
+:root.audit-mode .bg-rose-50\/30,
+:root.dark .bg-rose-50\/30,
+:root.audit-mode .bg-rose-50\/40,
+:root.dark .bg-rose-50\/40,
+:root.audit-mode .bg-rose-50\/50,
+:root.dark .bg-rose-50\/50,
+:root.audit-mode .bg-rose-50\/60,
+:root.dark .bg-rose-50\/60,
+:root.audit-mode .bg-rose-50\/70,
+:root.dark .bg-rose-50\/70,
+:root.audit-mode .bg-rose-50\/95,
+:root.dark .bg-rose-50\/95,
+:root.audit-mode .bg-red-50,
+:root.dark .bg-red-50,
+:root.audit-mode .bg-red-50\/30,
+:root.dark .bg-red-50\/30,
+:root.audit-mode .bg-red-50\/40,
+:root.dark .bg-red-50\/40,
+:root.audit-mode .bg-red-50\/50,
+:root.dark .bg-red-50\/50,
+:root.audit-mode .bg-red-50\/70,
+:root.dark .bg-red-50\/70 {
+  background-color: rgba(225, 29, 72, 0.18) !important;
+}
+:root.audit-mode .border-rose-100,
+:root.dark .border-rose-100,
+:root.audit-mode .border-rose-200,
+:root.dark .border-rose-200,
+:root.audit-mode .border-rose-200\/80,
+:root.dark .border-rose-200\/80,
+:root.audit-mode .border-rose-300,
+:root.dark .border-rose-300,
+:root.audit-mode .border-rose-400,
+:root.dark .border-rose-400,
+:root.audit-mode .border-rose-500,
+:root.dark .border-rose-500,
+:root.audit-mode .border-red-100,
+:root.dark .border-red-100,
+:root.audit-mode .border-red-200,
+:root.dark .border-red-200,
+:root.audit-mode .border-red-300,
+:root.dark .border-red-300,
+:root.audit-mode .border-red-400,
+:root.dark .border-red-400,
+:root.audit-mode .border-red-500,
+:root.dark .border-red-500 {
+  border-color: rgba(244, 63, 94, 0.45) !important;
+}
+:root.audit-mode .text-rose-950,
+:root.dark .text-rose-950,
+:root.audit-mode .text-rose-900,
+:root.dark .text-rose-900,
+:root.audit-mode .text-rose-800,
+:root.dark .text-rose-800,
+:root.audit-mode .text-red-950,
+:root.dark .text-red-950,
+:root.audit-mode .text-red-900,
+:root.dark .text-red-900,
+:root.audit-mode .text-red-800,
+:root.dark .text-red-800 {
+  color: #fecdd3 !important;
+}
+:root.audit-mode .text-rose-700,
+:root.dark .text-rose-700,
+:root.audit-mode .text-red-700,
+:root.dark .text-red-700 {
+  color: #fda4af !important;
+}
+:root.audit-mode .text-rose-600,
+:root.dark .text-rose-600,
+:root.audit-mode .text-red-600,
+:root.dark .text-red-600 {
+  color: #fb7185 !important;
+}
+:root.audit-mode .bg-rose-100,
+:root.dark .bg-rose-100,
+:root.audit-mode .bg-red-100,
+:root.dark .bg-red-100 {
+  background-color: rgba(225, 29, 72, 0.28) !important;
+}
+
+/* TINTED STATUS & CARD STYLING (Emerald / Green / Success) */
+:root.audit-mode .bg-emerald-50,
+:root.dark .bg-emerald-50,
+:root.audit-mode .bg-emerald-50\/30,
+:root.dark .bg-emerald-50\/30,
+:root.audit-mode .bg-emerald-50\/40,
+:root.dark .bg-emerald-50\/40,
+:root.audit-mode .bg-emerald-50\/50,
+:root.dark .bg-emerald-50\/50,
+:root.audit-mode .bg-emerald-50\/60,
+:root.dark .bg-emerald-50\/60,
+:root.audit-mode .bg-emerald-50\/70,
+:root.dark .bg-emerald-50\/70,
+:root.audit-mode .bg-emerald-50\/90,
+:root.dark .bg-emerald-50\/90,
+:root.audit-mode .bg-emerald-50\/95,
+:root.dark .bg-emerald-50\/95,
+:root.audit-mode .bg-green-50,
+:root.dark .bg-green-50,
+:root.audit-mode .bg-green-50\/40,
+:root.dark .bg-green-50\/40,
+:root.audit-mode .bg-green-50\/70,
+:root.dark .bg-green-50\/70 {
+  background-color: rgba(16, 185, 129, 0.18) !important;
+}
+:root.audit-mode .border-emerald-100,
+:root.dark .border-emerald-100,
+:root.audit-mode .border-emerald-200,
+:root.dark .border-emerald-200,
+:root.audit-mode .border-emerald-200\/80,
+:root.dark .border-emerald-200\/80,
+:root.audit-mode .border-emerald-300,
+:root.dark .border-emerald-300,
+:root.audit-mode .border-emerald-400,
+:root.dark .border-emerald-400,
+:root.audit-mode .border-emerald-500,
+:root.dark .border-emerald-500,
+:root.audit-mode .border-emerald-600,
+:root.dark .border-emerald-600,
+:root.audit-mode .border-green-100,
+:root.dark .border-green-100,
+:root.audit-mode .border-green-200,
+:root.dark .border-green-200,
+:root.audit-mode .border-green-300,
+:root.dark .border-green-300 {
+  border-color: rgba(16, 185, 129, 0.45) !important;
+}
+:root.audit-mode .text-emerald-950,
+:root.dark .text-emerald-950,
+:root.audit-mode .text-emerald-900,
+:root.dark .text-emerald-900,
+:root.audit-mode .text-emerald-800,
+:root.dark .text-emerald-800,
+:root.audit-mode .text-green-950,
+:root.dark .text-green-950,
+:root.audit-mode .text-green-900,
+:root.dark .text-green-900,
+:root.audit-mode .text-green-800,
+:root.dark .text-green-800 {
+  color: #a7f3d0 !important;
+}
+:root.audit-mode .text-emerald-700,
+:root.dark .text-emerald-700,
+:root.audit-mode .text-green-700,
+:root.dark .text-green-700 {
+  color: #6ee7b7 !important;
+}
+:root.audit-mode .text-emerald-600,
+:root.dark .text-emerald-600,
+:root.audit-mode .text-green-600,
+:root.dark .text-green-600 {
+  color: #34d399 !important;
+}
+:root.audit-mode .bg-emerald-100,
+:root.dark .bg-emerald-100,
+:root.audit-mode .bg-emerald-200,
+:root.dark .bg-emerald-200,
+:root.audit-mode .bg-emerald-200\/90,
+:root.dark .bg-emerald-200\/90,
+:root.audit-mode .bg-green-100,
+:root.dark .bg-green-100 {
+  background-color: rgba(16, 185, 129, 0.28) !important;
+}
+
+/* TINTED STATUS & CARD STYLING (Blue / Sky / Primary) */
+:root.audit-mode .bg-blue-50,
+:root.dark .bg-blue-50,
+:root.audit-mode .bg-blue-50\/30,
+:root.dark .bg-blue-50\/30,
+:root.audit-mode .bg-blue-50\/40,
+:root.dark .bg-blue-50\/40,
+:root.audit-mode .bg-blue-50\/50,
+:root.dark .bg-blue-50\/50,
+:root.audit-mode .bg-blue-50\/60,
+:root.dark .bg-blue-50\/60,
+:root.audit-mode .bg-blue-50\/70,
+:root.dark .bg-blue-50\/70,
+:root.audit-mode .bg-blue-50\/90,
+:root.dark .bg-blue-50\/90,
+:root.audit-mode .bg-blue-50\/95,
+:root.dark .bg-blue-50\/95,
+:root.audit-mode .bg-sky-50,
+:root.dark .bg-sky-50,
+:root.audit-mode .bg-sky-50\/40,
+:root.dark .bg-sky-50\/40,
+:root.audit-mode .bg-sky-50\/70,
+:root.dark .bg-sky-50\/70 {
+  background-color: rgba(59, 130, 246, 0.18) !important;
+}
+:root.audit-mode .border-blue-100,
+:root.dark .border-blue-100,
+:root.audit-mode .border-blue-200,
+:root.dark .border-blue-200,
+:root.audit-mode .border-blue-200\/80,
+:root.dark .border-blue-200\/80,
+:root.audit-mode .border-blue-300,
+:root.dark .border-blue-300,
+:root.audit-mode .border-blue-400,
+:root.dark .border-blue-400,
+:root.audit-mode .border-blue-500,
+:root.dark .border-blue-500,
+:root.audit-mode .border-blue-600,
+:root.dark .border-blue-600,
+:root.audit-mode .border-sky-100,
+:root.dark .border-sky-100,
+:root.audit-mode .border-sky-200,
+:root.dark .border-sky-200,
+:root.audit-mode .border-sky-300,
+:root.dark .border-sky-300 {
+  border-color: rgba(59, 130, 246, 0.45) !important;
+}
+:root.audit-mode .text-blue-950,
+:root.dark .text-blue-950,
+:root.audit-mode .text-blue-900,
+:root.dark .text-blue-900,
+:root.audit-mode .text-blue-800,
+:root.dark .text-blue-800,
+:root.audit-mode .text-sky-950,
+:root.dark .text-sky-950,
+:root.audit-mode .text-sky-900,
+:root.dark .text-sky-900,
+:root.audit-mode .text-sky-800,
+:root.dark .text-sky-800 {
+  color: #bfdbfe !important;
+}
+:root.audit-mode .text-blue-700,
+:root.dark .text-blue-700,
+:root.audit-mode .text-sky-700,
+:root.dark .text-sky-700 {
+  color: #93c5fd !important;
+}
+:root.audit-mode .text-blue-600,
+:root.dark .text-blue-600,
+:root.audit-mode .text-sky-600,
+:root.dark .text-sky-600 {
+  color: #60a5fa !important;
+}
+:root.audit-mode .bg-blue-100,
+:root.dark .bg-blue-100,
+:root.audit-mode .bg-blue-100\/90,
+:root.dark .bg-blue-100\/90,
+:root.audit-mode .bg-blue-200,
+:root.dark .bg-blue-200,
+:root.audit-mode .bg-blue-200\/90,
+:root.dark .bg-blue-200\/90,
+:root.audit-mode .bg-sky-100,
+:root.dark .bg-sky-100,
+:root.audit-mode .bg-sky-100\/90,
+:root.dark .bg-sky-100\/90 {
+  background-color: rgba(59, 130, 246, 0.28) !important;
+}
+
+/* TINTED STATUS & CARD STYLING (Indigo / Purple / Violet / AI) */
+:root.audit-mode .bg-indigo-50,
+:root.dark .bg-indigo-50,
+:root.audit-mode .bg-indigo-50\/40,
+:root.dark .bg-indigo-50\/40,
+:root.audit-mode .bg-indigo-50\/70,
+:root.dark .bg-indigo-50\/70,
+:root.audit-mode .bg-purple-50,
+:root.dark .bg-purple-50,
+:root.audit-mode .bg-purple-50\/40,
+:root.dark .bg-purple-50\/40,
+:root.audit-mode .bg-purple-50\/70,
+:root.dark .bg-purple-50\/70 {
+  background-color: rgba(99, 102, 241, 0.18) !important;
+}
+:root.audit-mode .border-indigo-100,
+:root.dark .border-indigo-100,
+:root.audit-mode .border-indigo-100\/60,
+:root.dark .border-indigo-100\/60,
+:root.audit-mode .border-indigo-100\/90,
+:root.dark .border-indigo-100\/90,
+:root.audit-mode .border-indigo-200,
+:root.dark .border-indigo-200,
+:root.audit-mode .border-indigo-200\/90,
+:root.dark .border-indigo-200\/90,
+:root.audit-mode .border-indigo-300,
+:root.dark .border-indigo-300,
+:root.audit-mode .border-indigo-400,
+:root.dark .border-indigo-400,
+:root.audit-mode .border-indigo-500,
+:root.dark .border-indigo-500,
+:root.audit-mode .border-purple-100,
+:root.dark .border-purple-100,
+:root.audit-mode .border-purple-200,
+:root.dark .border-purple-200,
+:root.audit-mode .border-purple-300,
+:root.dark .border-purple-300 {
+  border-color: rgba(99, 102, 241, 0.45) !important;
+}
+:root.audit-mode .text-indigo-950,
+:root.dark .text-indigo-950,
+:root.audit-mode .text-indigo-900,
+:root.dark .text-indigo-900,
+:root.audit-mode .text-indigo-800,
+:root.dark .text-indigo-800,
+:root.audit-mode .text-purple-950,
+:root.dark .text-purple-950,
+:root.audit-mode .text-purple-900,
+:root.dark .text-purple-900,
+:root.audit-mode .text-purple-800,
+:root.dark .text-purple-800 {
+  color: #c7d2fe !important;
+}
+:root.audit-mode .text-indigo-700,
+:root.dark .text-indigo-700,
+:root.audit-mode .text-purple-700,
+:root.dark .text-purple-700 {
+  color: #a5b4fc !important;
+}
+:root.audit-mode .text-indigo-600,
+:root.dark .text-indigo-600,
+:root.audit-mode .text-purple-600,
+:root.dark .text-purple-600 {
+  color: #818cf8 !important;
+}
+:root.audit-mode .bg-indigo-100,
+:root.dark .bg-indigo-100,
+:root.audit-mode .bg-indigo-100\/90,
+:root.dark .bg-indigo-100\/90,
+:root.audit-mode .bg-purple-100,
+:root.dark .bg-purple-100,
+:root.audit-mode .bg-purple-100\/90,
+:root.dark .bg-purple-100\/90 {
+  background-color: rgba(99, 102, 241, 0.28) !important;
+}
+
+/* TINTED STATUS & CARD STYLING (Amber / Warning / Opportunity) */
+:root.audit-mode .bg-amber-50,
+:root.dark .bg-amber-50,
+:root.audit-mode .bg-amber-50\/40,
+:root.dark .bg-amber-50\/40,
+:root.audit-mode .bg-amber-50\/50,
+:root.dark .bg-amber-50\/50,
+:root.audit-mode .bg-amber-50\/60,
+:root.dark .bg-amber-50\/60,
+:root.audit-mode .bg-amber-50\/70,
+:root.dark .bg-amber-50\/70,
+:root.audit-mode .bg-amber-50\/90,
+:root.dark .bg-amber-50\/90,
+:root.audit-mode .bg-amber-50\/95,
+:root.dark .bg-amber-50\/95,
+:root.audit-mode .bg-yellow-50,
+:root.dark .bg-yellow-50,
+:root.audit-mode .bg-yellow-50\/50,
+:root.dark .bg-yellow-50\/50 {
+  background-color: rgba(245, 158, 11, 0.18) !important;
+}
+:root.audit-mode .border-amber-100,
+:root.dark .border-amber-100,
+:root.audit-mode .border-amber-200,
+:root.dark .border-amber-200,
+:root.audit-mode .border-amber-200\/80,
+:root.dark .border-amber-200\/80,
+:root.audit-mode .border-amber-300,
+:root.dark .border-amber-300,
+:root.audit-mode .border-amber-400,
+:root.dark .border-amber-400,
+:root.audit-mode .border-amber-500,
+:root.dark .border-amber-500,
+:root.audit-mode .border-amber-600,
+:root.dark .border-amber-600,
+:root.audit-mode .border-yellow-100,
+:root.dark .border-yellow-100,
+:root.audit-mode .border-yellow-200,
+:root.dark .border-yellow-200,
+:root.audit-mode .border-yellow-300,
+:root.dark .border-yellow-300 {
+  border-color: rgba(245, 158, 11, 0.45) !important;
+}
+:root.audit-mode .text-amber-950,
+:root.dark .text-amber-950,
+:root.audit-mode .text-amber-900,
+:root.dark .text-amber-900,
+:root.audit-mode .text-amber-800,
+:root.dark .text-amber-800,
+:root.audit-mode .text-yellow-950,
+:root.dark .text-yellow-950,
+:root.audit-mode .text-yellow-900,
+:root.dark .text-yellow-900,
+:root.audit-mode .text-yellow-800,
+:root.dark .text-yellow-800 {
+  color: #fef08a !important;
+}
+:root.audit-mode .text-amber-700,
+:root.dark .text-amber-700,
+:root.audit-mode .text-yellow-700,
+:root.dark .text-yellow-700 {
+  color: #fde047 !important;
+}
+:root.audit-mode .text-amber-600,
+:root.dark .text-amber-600,
+:root.audit-mode .text-yellow-600,
+:root.dark .text-yellow-600 {
+  color: #facc15 !important;
+}
+:root.audit-mode .bg-amber-100,
+:root.dark .bg-amber-100,
+:root.audit-mode .bg-amber-100\/90,
+:root.dark .bg-amber-100\/90,
+:root.audit-mode .bg-amber-200,
+:root.dark .bg-amber-200,
+:root.audit-mode .bg-yellow-100,
+:root.dark .bg-yellow-100 {
+  background-color: rgba(245, 158, 11, 0.28) !important;
+}
+
+/* TINTED STATUS & CARD STYLING (Teal / Cyan / Clusters) */
+:root.audit-mode .bg-teal-50,
+:root.dark .bg-teal-50,
+:root.audit-mode .bg-teal-50\/40,
+:root.dark .bg-teal-50\/40,
+:root.audit-mode .bg-teal-50\/70,
+:root.dark .bg-teal-50\/70,
+:root.audit-mode .bg-teal-50\/90,
+:root.dark .bg-teal-50\/90,
+:root.audit-mode .bg-teal-50\/95,
+:root.dark .bg-teal-50\/95,
+:root.audit-mode .bg-cyan-50,
+:root.dark .bg-cyan-50,
+:root.audit-mode .bg-cyan-50\/40,
+:root.dark .bg-cyan-50\/40,
+:root.audit-mode .bg-cyan-50\/70,
+:root.dark .bg-cyan-50\/70,
+:root.audit-mode .bg-cyan-50\/90,
+:root.dark .bg-cyan-50\/90 {
+  background-color: rgba(20, 184, 166, 0.18) !important;
+}
+:root.audit-mode .border-teal-100,
+:root.dark .border-teal-100,
+:root.audit-mode .border-teal-200,
+:root.dark .border-teal-200,
+:root.audit-mode .border-teal-300,
+:root.dark .border-teal-300,
+:root.audit-mode .border-teal-400,
+:root.dark .border-teal-400,
+:root.audit-mode .border-teal-500,
+:root.dark .border-teal-500,
+:root.audit-mode .border-teal-600,
+:root.dark .border-teal-600,
+:root.audit-mode .border-cyan-100,
+:root.dark .border-cyan-100,
+:root.audit-mode .border-cyan-200,
+:root.dark .border-cyan-200,
+:root.audit-mode .border-cyan-300,
+:root.dark .border-cyan-300,
+:root.audit-mode .border-cyan-400,
+:root.dark .border-cyan-400,
+:root.audit-mode .border-cyan-500,
+:root.dark .border-cyan-500 {
+  border-color: rgba(20, 184, 166, 0.45) !important;
+}
+:root.audit-mode .text-teal-950,
+:root.dark .text-teal-950,
+:root.audit-mode .text-teal-900,
+:root.dark .text-teal-900,
+:root.audit-mode .text-teal-800,
+:root.dark .text-teal-800,
+:root.audit-mode .text-cyan-950,
+:root.dark .text-cyan-950,
+:root.audit-mode .text-cyan-900,
+:root.dark .text-cyan-900,
+:root.audit-mode .text-cyan-800,
+:root.dark .text-cyan-800 {
+  color: #99f6e4 !important;
+}
+:root.audit-mode .text-teal-700,
+:root.dark .text-teal-700,
+:root.audit-mode .text-cyan-700,
+:root.dark .text-cyan-700 {
+  color: #5eead4 !important;
+}
+:root.audit-mode .text-teal-600,
+:root.dark .text-teal-600,
+:root.audit-mode .text-cyan-600,
+:root.dark .text-cyan-600 {
+  color: #2dd4bf !important;
+}
+:root.audit-mode .bg-teal-100,
+:root.dark .bg-teal-100,
+:root.audit-mode .bg-teal-100\/90,
+:root.dark .bg-teal-100\/90,
+:root.audit-mode .bg-teal-200,
+:root.dark .bg-teal-200,
+:root.audit-mode .bg-teal-200\/90,
+:root.dark .bg-teal-200\/90,
+:root.audit-mode .bg-cyan-100,
+:root.dark .bg-cyan-100,
+:root.audit-mode .bg-cyan-100\/90,
+:root.dark .bg-cyan-100\/90 {
+  background-color: rgba(20, 184, 166, 0.28) !important;
+}
+
+/* React Flow in Dark / Audit Mode */
+:root.audit-mode .react-flow,
+:root.dark .react-flow {
+  background-color: #0b101c !important;
+}
+:root.audit-mode .react-flow__background,
+:root.dark .react-flow__background {
+  background-color: #0b101c !important;
+}
+:root.audit-mode .react-flow__background pattern circle,
+:root.dark .react-flow__background pattern circle {
+  fill: #334155 !important;
+}
+:root.audit-mode .react-flow__controls,
+:root.dark .react-flow__controls {
+  background-color: #0f172a !important;
+  border-color: #243147 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5) !important;
+}
+:root.audit-mode .react-flow__controls-button,
+:root.dark .react-flow__controls-button {
+  background-color: #0f172a !important;
+  border-bottom-color: #243147 !important;
+  fill: #f8fafc !important;
+}
+:root.audit-mode .react-flow__controls-button:hover,
+:root.dark .react-flow__controls-button:hover {
+  background-color: #1e293b !important;
+}
+:root.audit-mode .react-flow__controls-button svg,
+:root.dark .react-flow__controls-button svg {
+  fill: #f8fafc !important;
+}
+:root.audit-mode .react-flow__minimap,
+:root.dark .react-flow__minimap {
+  background-color: #0f172a !important;
+  border-color: #243147 !important;
+}
+:root.audit-mode .react-flow__minimap-mask,
+:root.dark .react-flow__minimap-mask {
+  fill: rgba(11, 16, 28, 0.75) !important;
+}
+:root.audit-mode .react-flow__edge-text,
+:root.dark .react-flow__edge-text {
+  fill: #fde047 !important;
+}
+:root.audit-mode .react-flow__edge-textbg,
+:root.dark .react-flow__edge-textbg {
+  fill: #1e1b10 !important;
+  stroke: #d97706 !important;
+}
+
+/* High-Contrast Semantic Node Overrides for Audit / Dark Mode */
+:root.audit-mode .react-flow__node,
+:root.dark .react-flow__node {
+  color: #ffffff !important;
+}
+:root.audit-mode .react-flow__node *,
+:root.dark .react-flow__node * {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+:root.audit-mode .react-flow__node .bg-white,
+:root.dark .react-flow__node .bg-white {
+  background-color: #0f172a !important;
+  border-color: #334155 !important;
+  color: #ffffff !important;
+}
+:root.audit-mode .react-flow__node .bg-emerald-50\/95,
+:root.dark .react-flow__node .bg-emerald-50\/95,
+:root.audit-mode .react-flow__node .bg-emerald-50\/90,
+:root.dark .react-flow__node .bg-emerald-50\/90 {
+  background-color: rgba(6, 78, 59, 0.65) !important;
+  border-color: #10b981 !important;
+  color: #ffffff !important;
+}
+:root.audit-mode .react-flow__node .bg-teal-50\/95,
+:root.dark .react-flow__node .bg-teal-50\/95,
+:root.audit-mode .react-flow__node .bg-teal-50\/90,
+:root.dark .react-flow__node .bg-teal-50\/90 {
+  background-color: rgba(19, 78, 74, 0.65) !important;
+  border-color: #14b8a6 !important;
+  color: #ffffff !important;
+}
+:root.audit-mode .react-flow__node .bg-blue-50\/95,
+:root.dark .react-flow__node .bg-blue-50\/95,
+:root.audit-mode .react-flow__node .bg-blue-50\/90,
+:root.dark .react-flow__node .bg-blue-50\/90 {
+  background-color: rgba(30, 58, 138, 0.65) !important;
+  border-color: #3b82f6 !important;
+  color: #ffffff !important;
+}
+:root.audit-mode .react-flow__node .bg-amber-50\/95,
+:root.dark .react-flow__node .bg-amber-50\/95,
+:root.audit-mode .react-flow__node .bg-amber-50\/90,
+:root.dark .react-flow__node .bg-amber-50\/90 {
+  background-color: rgba(120, 53, 15, 0.65) !important;
+  border-color: #f59e0b !important;
+  color: #ffffff !important;
+}
+
+/* Force bright white (#ffffff) and dark text shadow on graph node labels in Audit / Dark Mode */
+:root.audit-mode .react-flow__node div,
+:root.dark .react-flow__node div,
+:root.audit-mode .react-flow__node span,
+:root.dark .react-flow__node span,
+:root.audit-mode .react-flow__node p,
+:root.dark .react-flow__node p,
+:root.audit-mode .react-flow__node strong,
+:root.dark .react-flow__node strong,
+:root.audit-mode .react-flow__node a,
+:root.dark .react-flow__node a {
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9);
+}
+:root.audit-mode .react-flow__node .text-slate-950,
+:root.dark .react-flow__node .text-slate-950,
+:root.audit-mode .react-flow__node .text-slate-900,
+:root.dark .react-flow__node .text-slate-900,
+:root.audit-mode .react-flow__node .text-slate-800,
+:root.dark .react-flow__node .text-slate-800,
+:root.audit-mode .react-flow__node .text-black,
+:root.dark .react-flow__node .text-black,
+:root.audit-mode .react-flow__node .text-white,
+:root.dark .react-flow__node .text-white {
+  color: #ffffff !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95) !important;
+  filter: none !important;
+}
+:root.audit-mode .react-flow__node .text-slate-700,
+:root.dark .react-flow__node .text-slate-700,
+:root.audit-mode .react-flow__node .text-slate-600,
+:root.dark .react-flow__node .text-slate-600 {
+  color: #f1f5f9 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9) !important;
+}
+:root.audit-mode .react-flow__node .text-slate-500,
+:root.dark .react-flow__node .text-slate-500,
+:root.audit-mode .react-flow__node .text-slate-400,
+:root.dark .react-flow__node .text-slate-400 {
+  color: #e2e8f0 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9) !important;
+}
+:root.audit-mode .react-flow__node .text-emerald-950,
+:root.dark .react-flow__node .text-emerald-950,
+:root.audit-mode .react-flow__node .text-emerald-900,
+:root.dark .react-flow__node .text-emerald-900,
+:root.audit-mode .react-flow__node .text-emerald-800,
+:root.dark .react-flow__node .text-emerald-800 {
+  color: #a7f3d0 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9) !important;
+}
+:root.audit-mode .react-flow__node .text-teal-950,
+:root.dark .react-flow__node .text-teal-950,
+:root.audit-mode .react-flow__node .text-teal-900,
+:root.dark .react-flow__node .text-teal-900,
+:root.audit-mode .react-flow__node .text-teal-800,
+:root.dark .react-flow__node .text-teal-800 {
+  color: #99f6e4 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9) !important;
+}
+:root.audit-mode .react-flow__node .text-blue-950,
+:root.dark .react-flow__node .text-blue-950,
+:root.audit-mode .react-flow__node .text-blue-900,
+:root.dark .react-flow__node .text-blue-900,
+:root.audit-mode .react-flow__node .text-blue-800,
+:root.dark .react-flow__node .text-blue-800 {
+  color: #bfdbfe !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9) !important;
+}
+:root.audit-mode .react-flow__node .text-amber-950,
+:root.dark .react-flow__node .text-amber-950,
+:root.audit-mode .react-flow__node .text-amber-900,
+:root.dark .react-flow__node .text-amber-900,
+:root.audit-mode .react-flow__node .text-amber-800,
+:root.dark .react-flow__node .text-amber-800 {
+  color: #fef08a !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9) !important;
+}
+:root.audit-mode .react-flow__node .text-rose-950,
+:root.dark .react-flow__node .text-rose-950,
+:root.audit-mode .react-flow__node .text-rose-900,
+:root.dark .react-flow__node .text-rose-900,
+:root.audit-mode .react-flow__node .text-rose-800,
+:root.dark .react-flow__node .text-rose-800 {
+  color: #fecdd3 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9) !important;
+}
+:root.audit-mode .react-flow__node .text-purple-950,
+:root.dark .react-flow__node .text-purple-950,
+:root.audit-mode .react-flow__node .text-purple-900,
+:root.dark .react-flow__node .text-purple-900,
+:root.audit-mode .react-flow__node .text-purple-800,
+:root.dark .react-flow__node .text-purple-800 {
+  color: #d8b4fe !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9) !important;
+}
+:root.audit-mode .react-flow__node .text-cyan-950,
+:root.dark .react-flow__node .text-cyan-950,
+:root.audit-mode .react-flow__node .text-cyan-900,
+:root.dark .react-flow__node .text-cyan-900,
+:root.audit-mode .react-flow__node .text-cyan-800,
+:root.dark .react-flow__node .text-cyan-800 {
+  color: #a5f3fc !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9) !important;
+}
+:root.audit-mode .react-flow__node .text-indigo-950,
+:root.dark .react-flow__node .text-indigo-950,
+:root.audit-mode .react-flow__node .text-indigo-900,
+:root.dark .react-flow__node .text-indigo-900,
+:root.audit-mode .react-flow__node .text-indigo-800,
+:root.dark .react-flow__node .text-indigo-800 {
+  color: #c7d2fe !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9) !important;
+}
+
+/* Neutralize light drop-shadow filters on node headings in dark mode */
+:root.audit-mode .react-flow__node [class*="drop-shadow"],
+:root.dark .react-flow__node [class*="drop-shadow"] {
+  filter: none !important;
+}
+
+/* React Flow Legend Panel in Audit / Dark Mode */
+:root.audit-mode .react-flow__panel,
+:root.dark .react-flow__panel {
+  background-color: rgba(15, 23, 42, 0.95) !important;
+  border-color: #243147 !important;
+  color: #cbd5e1 !important;
+}
+:root.audit-mode .react-flow__panel .text-slate-800,
+:root.dark .react-flow__panel .text-slate-800,
+:root.audit-mode .react-flow__panel .text-slate-900,
+:root.dark .react-flow__panel .text-slate-900 {
+  color: #f8fafc !important;
+}
+:root.audit-mode .react-flow__panel .text-slate-600,
+:root.dark .react-flow__panel .text-slate-600,
+:root.audit-mode .react-flow__panel .text-slate-700,
+:root.dark .react-flow__panel .text-slate-700 {
+  color: #e2e8f0 !important;
+}
+:root.audit-mode .react-flow__panel .text-blue-700,
+:root.dark .react-flow__panel .text-blue-700,
+:root.audit-mode .react-flow__panel .text-blue-800,
+:root.dark .react-flow__panel .text-blue-800 {
+  color: #93c5fd !important;
+}
+
+/* High-Visibility Status Badges in Overview Section */
+:root.audit-mode .status-badge-healthy,
+:root.dark .status-badge-healthy,
+:root.audit-mode [class*="bg-emerald-50"][class*="text-emerald-800"],
+:root.dark [class*="bg-emerald-50"][class*="text-emerald-800"],
+:root.audit-mode [class*="bg-emerald-50"][class*="text-emerald-700"],
+:root.dark [class*="bg-emerald-50"][class*="text-emerald-700"] {
+  background-color: rgba(16, 185, 129, 0.2) !important;
+  border-color: rgba(16, 185, 129, 0.5) !important;
+  color: #6ee7b7 !important;
+  font-weight: 700 !important;
+}
+:root.audit-mode .status-badge-warning,
+:root.dark .status-badge-warning,
+:root.audit-mode [class*="bg-amber-50"][class*="text-amber-800"],
+:root.dark [class*="bg-amber-50"][class*="text-amber-800"],
+:root.audit-mode [class*="bg-amber-50"][class*="text-amber-700"],
+:root.dark [class*="bg-amber-50"][class*="text-amber-700"] {
+  background-color: rgba(245, 158, 11, 0.2) !important;
+  border-color: rgba(245, 158, 11, 0.5) !important;
+  color: #fde047 !important;
+  font-weight: 700 !important;
+}
+:root.audit-mode .status-badge-critical,
+:root.dark .status-badge-critical,
+:root.audit-mode [class*="bg-rose-50"][class*="text-rose-800"],
+:root.dark [class*="bg-rose-50"][class*="text-rose-800"],
+:root.audit-mode [class*="bg-rose-50"][class*="text-rose-700"],
+:root.dark [class*="bg-rose-50"][class*="text-rose-700"] {
+  background-color: rgba(225, 29, 72, 0.2) !important;
+  border-color: rgba(225, 29, 72, 0.5) !important;
+  color: #fda4af !important;
+  font-weight: 700 !important;
+}
+
+/* FORM CONTROLS & SELECT BOXES IN AUDIT / DARK MODE */
+:root.audit-mode select,
+:root.dark select,
+:root.audit-mode input,
+:root.dark input,
+:root.audit-mode textarea,
+:root.dark textarea {
+  background-color: #0f172a !important;
+  color: #f8fafc !important;
+  border-color: #334155 !important;
+}
+:root.audit-mode select option,
+:root.dark select option {
+  background-color: #0f172a !important;
+  color: #f8fafc !important;
+}
+:root.audit-mode select:focus,
+:root.dark select:focus,
+:root.audit-mode input:focus,
+:root.dark input:focus,
+:root.audit-mode textarea:focus,
+:root.dark textarea:focus {
+  border-color: #3b82f6 !important;
+  outline: none !important;
+}
+
+/* TABLES & INTERACTIVE ROWS IN AUDIT / DARK MODE */
+:root.audit-mode table th,
+:root.dark table th {
+  background-color: #0d1527 !important;
+  color: #f8fafc !important;
+  border-color: #1e293b !important;
+}
+:root.audit-mode table tr,
+:root.dark table tr,
+:root.audit-mode table tbody,
+:root.dark table tbody {
+  background-color: #0d131f !important;
+}
+:root.audit-mode table tr:hover td,
+:root.dark table tr:hover td {
+  background-color: rgba(30, 41, 59, 0.55) !important;
+}
+:root.audit-mode table td,
+:root.dark table td {
+  border-color: #1e293b !important;
+}
+
+/* RECHARTS SVG OVERRIDES IN AUDIT / DARK MODE */
+:root.audit-mode .recharts-cartesian-grid-horizontal line,
+:root.dark .recharts-cartesian-grid-horizontal line,
+:root.audit-mode .recharts-cartesian-grid-vertical line,
+:root.dark .recharts-cartesian-grid-vertical line {
+  stroke: rgba(255, 255, 255, 0.12) !important;
+}
+:root.audit-mode .recharts-text,
+:root.dark .recharts-text {
+  fill: #94a3b8 !important;
+}
+:root.audit-mode .recharts-default-tooltip,
+:root.dark .recharts-default-tooltip {
+  background-color: #0f172a !important;
+  border-color: #334155 !important;
+  color: #f8fafc !important;
+}
+
+/* MODALS & DIALOGS IN AUDIT / DARK MODE */
+:root.audit-mode .fixed.inset-0,
+:root.dark .fixed.inset-0 {
+  background-color: rgba(3, 7, 18, 0.75) !important;
+}
+
+/* Custom crisp enterprise scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+:root.audit-mode ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+:root.audit-mode ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Soft transition utilities */
+.transition-card {
+  transition: all 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* React Flow canvas customization */
+.react-flow__attribution {
+  display: none !important;
+}
+
+/* ========================================================================= */
+/* REACT FLOW NODE TYPOGRAPHY & RESPONSIVE LEGIBILITY STYLING */
+/* ========================================================================= */
+.react-flow__node {
+  font-size: 0.875rem /* 14px */;
+  line-height: 1.4;
+}
+
+.react-flow__node .node-title,
+.react-flow__node [class*="font-extrabold"],
+.react-flow__node [class*="font-bold"] {
+  font-size: 0.9375rem /* 15px */;
+  letter-spacing: -0.01em;
+}
+
+/* Responsive Scaling Across Screen Resolutions */
+@media (min-width: 768px) {
+  .react-flow__node {
+    font-size: 0.90625rem /* 14.5px */;
+  }
+  .react-flow__node .node-title {
+    font-size: 0.96875rem /* 15.5px */;
+  }
+}
+
+@media (min-width: 1024px) {
+  .react-flow__node {
+    font-size: 0.9375rem /* 15.5px */;
+  }
+  .react-flow__node .node-title {
+    font-size: 1rem /* 16px */;
+  }
+}
+
+@media (min-width: 1536px) {
+  .react-flow__node {
+    font-size: 1rem /* 16px */;
+  }
+  .react-flow__node .node-title {
+    font-size: 1.0625rem /* 17px */;
+  }
+}
+
+/* Dark Mode / Audit Mode React Flow node accessibility contrast overrides */
+:root.audit-mode .react-flow__node {
+  color: #f8fafc !important;
+}
+
+:root.audit-mode .react-flow__node .node-title {
+  color: #ffffff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+

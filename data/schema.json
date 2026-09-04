@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Hermes Lead SEO Execution Object Schema",
+  "description": "Formal contract for multi-agent SEO intelligence dashboard intake for nuviraspace.com",
+  "type": "object",
+  "required": [
+    "metadata",
+    "healthScores",
+    "executiveTakeaway",
+    "issues",
+    "evidence",
+    "semanticGraph",
+    "topicClusters",
+    "contentGaps",
+    "internalLinking",
+    "technical",
+    "structuredData",
+    "eeat",
+    "aeo"
+  ],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": ["siteUrl", "siteName", "auditDate", "datasetVersion", "generatedBy", "dataAvailability"],
+      "properties": {
+        "siteUrl": { "type": "string", "format": "uri" },
+        "siteName": { "type": "string" },
+        "auditId": { "type": "string" },
+        "auditDate": { "type": "string" },
+        "datasetVersion": { "type": "string" },
+        "generatedBy": { "type": "string" },
+        "dataAvailability": { "type": "object" }
+      }
+    },
+    "healthScores": {
+      "type": "object",
+      "required": ["overall", "technical", "content", "semantic", "internalLinks", "structuredData", "eeat", "aeo"],
+      "properties": {
+        "overall": { "type": "number", "minimum": 0, "maximum": 100 },
+        "technical": { "type": "number", "minimum": 0, "maximum": 100 },
+        "content": { "type": "number", "minimum": 0, "maximum": 100 },
+        "semantic": { "type": "number", "minimum": 0, "maximum": 100 },
+        "internalLinks": { "type": "number", "minimum": 0, "maximum": 100 },
+        "structuredData": { "type": "number", "minimum": 0, "maximum": 100 },
+        "eeat": { "type": "number", "minimum": 0, "maximum": 100 },
+        "aeo": { "type": "number", "minimum": 0, "maximum": 100 }
+      }
+    },
+    "executiveTakeaway": {
+      "type": "object",
+      "required": ["whatIsWrong", "whyItMatters", "whatToDoNext"],
+      "properties": {
+        "whatIsWrong": { "type": "array", "items": { "type": "string" } },
+        "whyItMatters": { "type": "array", "items": { "type": "string" } },
+        "whatToDoNext": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "category", "severity", "impact", "effort", "priority", "rootCause", "affectedUrls", "recommendedAction"]
+      }
+    },
+    "semanticGraph": {
+      "type": "object",
+      "required": ["nodes", "edges", "topicalCenter"],
+      "properties": {
+        "nodes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "label", "type", "status"]
+          }
+        },
+        "edges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "source", "target", "relationType", "relationKind"]
+          }
+        }
+      }
+    }
+  }
+}

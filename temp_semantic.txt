@@ -1,0 +1,400 @@
+import React, { useState, useMemo, useCallback, useEffect } from 'react';
+import {
+  ReactFlow,
+  MiniMap,
+  Controls,
+  Background,
+  useNodesState,
+  useEdgesState,
+  Node,
+  Edge,
+  MarkerType,
+  Panel,
+  useReactFlow,
+  ReactFlowProvider
+} from '@xyflow/react';
+import { 
+  Search, 
+  Filter, 
+  RotateCcw, 
+  Maximize2, 
+  Layers, 
+  Sparkles, 
+  SlidersHorizontal,
+  Eye,
+  CheckSquare,
+  Square,
+  AlertCircle
+} from 'lucide-react';
+import { SemanticNodeComponent } from './SemanticNodeComponent';
+import { PageDetailPanel } from './PageDetailPanel';
+import { EntityDetailPanel } from './EntityDetailPanel';
+import { getDagreLayout } from './layoutHelper';
+import { 
+  SEODashboardDataset, 
+  SemanticNodeData, 
+  SemanticEdgeData, 
+  SemanticNodeType, 
+  SemanticNodeStatus,
+  SemanticRelationKind,
+  IssueItem
+} from '../../types/seo-schema';
+
+const nodeTypes = {
+  site: SemanticNodeComponent,
+  entity: SemanticNodeComponent,
+  topic: SemanticNodeComponent,
+  cluster: SemanticNodeComponent,
+  subtopic: SemanticNodeComponent,
+  page: SemanticNodeComponent,
+  custom: SemanticNodeComponent,
+};
+
+interface SemanticGraphViewProps {
+  dataset: SEODashboardDataset;
+  focusedNodeId?: string | null;
+  onSelectIssue?: (issue: IssueItem) => void;
+}
+
+const InnerSemanticGraph: React.FC<SemanticGraphViewProps> = ({
+  dataset,
+  focusedNodeId,
+  onSelectIssue,
+}) => {
+  const reactFlowInstance = useReactFlow();
+
+  // Search & Filters State
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedTypes, setSelectedTypes] = useState<Set<SemanticNodeType>>(
+    new Set(['SITE', 'ENTITY', 'TOPIC', 'CLUSTER', 'SUBTOPIC', 'PAGE'])
+  );
+  const [selectedStatuses, setSelectedStatuses] = useState<Set<SemanticNodeStatus>>(
+    new Set(['COVERED', 'STRONG', 'WEAK', 'MISSING', 'ORPHAN', 'OFF-TOPIC', 'OPPORTUNITY'])
+  );
+  const [selectedRelationKinds, setSelectedRelationKinds] = useState<Set<SemanticRelationKind>>(
+    new Set(['semantic relationship', 'content relationship', 'internal-link relationship', 'canonical relationship'])
+  );
+  const [focusMode, setFocusMode] = useState(false);
+  const [selectedNodeData, setSelectedNodeData] = useState<SemanticNodeData | null>(null);
+
+  const rawGraph = dataset.semanticGraph || { nodes: [], edges: [], topicalCenter: { available: false, centerEntity: '', dimensions: [], zones: { core: [], relevantPeriphery: [], distantOffTopic: [] } } };
+
+  // Generate initial React Flow nodes & edges
+  const { nodes: initialNodes, edges: initialEdges } = useMemo(() => {
+    const rawNodes = rawGraph.nodes || [];
+    const rawEdges = rawGraph.edges || [];
+
+    const nodes: Node[] = rawNodes.map((n: SemanticNodeData) => ({
+      id: n.id,
+      type: n.type.toLowerCase(),
+      data: n as unknown as Record<string, unknown>,
+      position: { x: 0, y: 0 },
+    }));
+
+    const edges: Edge[] = rawEdges.map((e: SemanticEdgeData) => {
+      // Color-code edge by relationship kind
+      let strokeColor = '#94a3b8'; // default slate
+      let isDashed = false;
+      let strokeWidth = 1.5;
+
+      if (e.relationKind === 'internal-link relationship') {
+        strokeColor = '#2563eb'; // blue
+        strokeWidth = 2.0;
+      } else if (e.relationKind === 'content relationship') {
+        strokeColor = '#059669'; // emerald
+        strokeWidth = 1.5;
+      } else if (e.relationKind === 'canonical relationship') {
+        strokeColor = '#d97706'; // amber
+        isDashed = true;
+      } else {
+        strokeColor = '#6366f1'; // indigo
+      }
+
+      return {
+        id: e.id,
+        source: e.source,
+        target: e.target,
+        type: 'smoothstep',
+        animated: e.relationKind === 'internal-link relationship',
+        style: {
+          stroke: strokeColor,
+          strokeWidth,
+          strokeDasharray: isDashed ? '4 4' : undefined,
+          opacity: 0.85,
+        },
+        markerEnd: {
+          type: MarkerType.ArrowClosed,
+          color: strokeColor,
+          width: 14,
+          height: 14,
+        },
+        data: e as unknown as Record<string, unknown>,
+      };
+    });
+
+    return getDagreLayout(nodes, edges, 'LR');
+  }, [rawGraph]);
+
+  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
+  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+
+  // Sync when initial nodes change (e.g. audit switch)
+  useEffect(() => {
+    setNodes(initialNodes);
+    setEdges(initialEdges);
+    setTimeout(() => {
+      reactFlowInstance.fitView({ padding: 0.2 });
+    }, 50);
+  }, [initialNodes, initialEdges, setNodes, setEdges, reactFlowInstance]);
+
+  // Handle external focusedNodeId
+  useEffect(() => {
+    if (focusedNodeId) {
+      const target = rawGraph.nodes.find(n => n.id === focusedNodeId || n.url === focusedNodeId);
+      if (target) {
+        setSelectedNodeData(target);
+        reactFlowInstance.setCenter(0, 0, { zoom: 1.1, duration: 400 });
+      }
+    }
+  }, [focusedNodeId, rawGraph.nodes, reactFlowInstance]);
+
+  // Apply visual filtering, search highlighting, and Focus Mode
+  const filteredNodes = useMemo(() => {
+    const query = searchQuery.toLowerCase().trim();
+
+    // In focus mode, determine active neighbors of selectedNode
+    let connectedNodeIds: Set<string> | null = null;
+    if (focusMode && selectedNodeData) {
+      connectedNodeIds = new Set<string>([selectedNodeData.id]);
+      rawGraph.edges.forEach(e => {
+        if (e.source === selectedNodeData.id) connectedNodeIds?.add(e.target);
+        if (e.target === selectedNodeData.id) connectedNodeIds?.add(e.source);
+      });
+    }
+
+    return nodes.map(node => {
+      const data = node.data as unknown as SemanticNodeData;
+      const matchesType = selectedTypes.has(data.type);
+      const matchesStatus = selectedStatuses.has(data.status);
+      const matchesSearch = !query || 
+        data.label.toLowerCase().includes(query) || 
+        (data.url && data.url.toLowerCase().includes(query));
+
+      const isConnected = !connectedNodeIds || connectedNodeIds.has(node.id);
+      const isVisible = matchesType && matchesStatus && matchesSearch;
+
+      const isDimmed = !isConnected || (!matchesSearch && query.length > 0);
+
+      return {
+        ...node,
+        hidden: !isVisible,
+        style: {
+          ...node.style,
+          opacity: isDimmed ? 0.2 : 1,
+          transition: 'opacity 0.2s ease',
+        },
+      };
+    });
+  }, [nodes, searchQuery, selectedTypes, selectedStatuses, focusMode, selectedNodeData, rawGraph.edges]);
+
+  const filteredEdges = useMemo(() => {
+    return edges.map(edge => {
+      const edgeData = edge.data as unknown as SemanticEdgeData;
+      const matchesKind = !edgeData || selectedRelationKinds.has(edgeData.relationKind);
+
+      let isConnected = true;
+      if (focusMode && selectedNodeData) {
+        isConnected = edge.source === selectedNodeData.id || edge.target === selectedNodeData.id;
+      }
+
+      return {
+        ...edge,
+        hidden: !matchesKind,
+        style: {
+          ...edge.style,
+          opacity: isConnected ? 0.85 : 0.15,
+        },
+      };
+    });
+  }, [edges, selectedRelationKinds, focusMode, selectedNodeData]);
+
+  // Click on a node
+  const onNodeClick = useCallback((_: React.MouseEvent, node: Node) => {
+    const data = node.data as unknown as SemanticNodeData;
+    setSelectedNodeData(data);
+  }, []);
+
+  const handleResetLayout = useCallback(() => {
+    const layout = getDagreLayout(initialNodes, initialEdges, 'LR');
+    setNodes(layout.nodes);
+    setEdges(layout.edges);
+    setTimeout(() => {
+      reactFlowInstance.fitView({ padding: 0.2, duration: 400 });
+    }, 50);
+  }, [initialNodes, initialEdges, setNodes, setEdges, reactFlowInstance]);
+
+  const handleFitScreen = useCallback(() => {
+    reactFlowInstance.fitView({ padding: 0.2, duration: 300 });
+  }, [reactFlowInstance]);
+
+  // Toggle Filters Helpers
+  const toggleType = (type: SemanticNodeType) => {
+    setSelectedTypes(prev => {
+      const next = new Set(prev);
+      if (next.has(type)) next.delete(type);
+      else next.add(type);
+      return next;
+    });
+  };
+
+  const toggleStatus = (status: SemanticNodeStatus) => {
+    setSelectedStatuses(prev => {
+      const next = new Set(prev);
+      if (next.has(status)) next.delete(status);
+      else next.add(status);
+      return next;
+    });
+  };
+
+  const toggleRelationKind = (kind: SemanticRelationKind) => {
+    setSelectedRelationKinds(prev => {
+      const next = new Set(prev);
+      if (next.has(kind)) next.delete(kind);
+      else next.add(kind);
+      return next;
+    });
+  };
+
+  return (
+    <div className="relative w-full h-[calc(100vh-8.5rem)] min-h-[580px] bg-slate-50/60 rounded-xl border border-slate-200 overflow-hidden flex flex-col">
+      {/* Top Toolbar */}
+      <div className="p-3 bg-white border-b border-slate-200 flex flex-wrap items-center justify-between gap-3 z-20 shadow-xs">
+        {/* Search */}
+        <div className="relative min-w-[240px] flex-1 max-w-sm">
+          <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+          <input
+            type="text"
+            placeholder="Search entities, topics, URLs..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full pl-8 pr-3 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600 focus:bg-white transition-all text-slate-800 placeholder:text-slate-400"
+          />
+        </div>
+
+        {/* Action Controls */}
+        <div className="flex items-center gap-2">
+          {/* Focus Mode toggle */}
+          <button
+            onClick={() => setFocusMode(!focusMode)}
+            className={`px-2.5 py-1.5 rounded-md text-xs font-medium flex items-center gap-1.5 transition-colors border ${
+              focusMode
+                ? 'bg-indigo-600 text-white border-indigo-700 shadow-xs'
+                : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
+            }`}
+            title="Focus mode dims non-connected nodes"
+          >
+            <Eye className="w-3.5 h-3.5" />
+            <span>Focus Mode</span>
+          </button>
+
+          {/* Reset Layout */}
+          <button
+            onClick={handleResetLayout}
+            className="px-2.5 py-1.5 rounded-md text-xs font-medium bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 flex items-center gap-1.5 transition-colors"
+            title="Auto-calculate Dagre layout"
+          >
+            <RotateCcw className="w-3.5 h-3.5 text-slate-500" />
+            <span>Auto Layout</span>
+          </button>
+
+          {/* Fit View */}
+          <button
+            onClick={handleFitScreen}
+            className="px-2.5 py-1.5 rounded-md text-xs font-medium bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 flex items-center gap-1.5 transition-colors"
+            title="Fit to Screen"
+          >
+            <Maximize2 className="w-3.5 h-3.5 text-slate-500" />
+            <span>Fit View</span>
+          </button>
+        </div>
+      </div>
+
+      {/* Filter Chips Bar */}
+      <div className="px-3 py-2 bg-slate-50 border-b border-slate-200 flex flex-wrap items-center gap-4 text-xs text-slate-600 z-10">
+        {/* Node Type Filters */}
+        <div className="flex items-center gap-1">
+          <span className="font-semibold text-slate-700 mr-1 text-[11px] uppercase tracking-wider">Type:</span>
+          {(['SITE', 'ENTITY', 'TOPIC', 'CLUSTER', 'SUBTOPIC', 'PAGE'] as SemanticNodeType[]).map(type => (
+            <button
+              key={type}
+              onClick={() => toggleType(type)}
+              className={`px-1.5 py-0.5 rounded text-[10px] font-medium border transition-colors ${
+                selectedTypes.has(type)
+                  ? 'bg-blue-50 border-blue-300 text-blue-800'
+                  : 'bg-white border-slate-200 text-slate-400 line-through opacity-60'
+              }`}
+            >
+              {type}
+            </button>
+          ))}
+        </div>
+
+        <div className="h-4 w-px bg-slate-200 hidden sm:block" />
+
+        {/* Status Filters */}
+        <div className="flex items-center gap-1">
+          <span className="font-semibold text-slate-700 mr-1 text-[11px] uppercase tracking-wider">Status:</span>
+          {(['STRONG', 'COVERED', 'WEAK', 'MISSING', 'ORPHAN', 'OPPORTUNITY'] as SemanticNodeStatus[]).map(status => (
+            <button
+              key={status}
+              onClick={() => toggleStatus(status)}
+              className={`px-1.5 py-0.5 rounded text-[10px] font-medium border transition-colors ${
+                selectedStatuses.has(status)
+                  ? 'bg-slate-100 border-slate-300 text-slate-800'
+                  : 'bg-white border-slate-200 text-slate-400 line-through opacity-60'
+              }`}
+            >
+              {status}
+            </button>
+          ))}
+        </div>
+
+        <div className="h-4 w-px bg-slate-200 hidden sm:block" />
+
+        {/* Edge Types */}
+        <div className="flex items-center gap-1">
+          <span className="font-semibold text-slate-700 mr-1 text-[11px] uppercase tracking-wider">Links:</span>
+          <button
+            onClick={() => toggleRelationKind('internal-link relationship')}
+            className={`px-1.5 py-0.5 rounded text-[10px] font-medium border transition-colors ${
+              selectedRelationKinds.has('internal-link relationship')
+                ? 'bg-blue-100 border-blue-400 text-blue-900 font-semibold'
+                : 'bg-white border-slate-200 text-slate-400 opacity-60'
+            }`}
+          >
+            Internal Links
+          </button>
+          <button
+            onClick={() => toggleRelationKind('semantic relationship')}
+            className={`px-1.5 py-0.5 rounded text-[10px] font-medium border transition-colors ${
+              selectedRelationKinds.has('semantic relationship')
+                ? 'bg-indigo-100 border-indigo-300 text-indigo-900'
+                : 'bg-white border-slate-200 text-slate-400 opacity-60'
+            }`}
+          >
+            Semantic
+          </button>
+        </div>
+      </div>
+
+      {/* Main Flow Canvas */}
+      <div className="flex-1 relative w-full h-full">
+        <ReactFlow
+          nodes={filteredNodes}
+          edges={filteredEdges}
+          onNodesChange={onNodesChange}
+          onEdgesChange={onEdgesChange}
+          onNodeClick={onNodeClick}
+          nodeTypes={nodeTypes}
+          fitView
+          minZoom={0.2}

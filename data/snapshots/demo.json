@@ -1,0 +1,228 @@
+{
+  "metadata": {
+    "siteUrl": "https://fictional-aero-robotics.example.com",
+    "siteName": "AeroRobotics Labs [DEMO DATA]",
+    "auditId": "AUD-DEMO-SAMPLE-99",
+    "auditDate": "2026-07-15",
+    "datasetVersion": "3.5.0-demo",
+    "generatedBy": "DEMO DATA GENERATOR - NOT REAL AUDIT",
+    "dataAvailability": {
+      "technical": "AVAILABLE",
+      "semantic": "AVAILABLE",
+      "clusters": "AVAILABLE",
+      "internalLinks": "AVAILABLE",
+      "content": "AVAILABLE",
+      "structuredData": "PARTIAL",
+      "eeat": "AVAILABLE",
+      "aeo": "PARTIAL",
+      "gsc": "AVAILABLE",
+      "ga4": "UNKNOWN",
+      "embeddings": "AVAILABLE"
+    },
+    "notes": "DEMO DATA: This is synthetic sample demonstration data for interface testing and verification."
+  },
+  "healthScores": {
+    "overall": 62,
+    "technical": 75,
+    "content": 60,
+    "semantic": 58,
+    "internalLinks": 50,
+    "structuredData": 65,
+    "eeat": 70,
+    "aeo": 55,
+    "searchPerformance": 61,
+    "methodologyNote": "DEMO DATA benchmark weights."
+  },
+  "executiveTakeaway": {
+    "whatIsWrong": [
+      "[DEMO DATA] Robotic arm kinematics pillar is missing internal link equity from commercial UAV pages.",
+      "[DEMO DATA] Synthetic test reports show thin content on sensor fusion architectures.",
+      "[DEMO DATA] AI search engines do not extract product specs due to missing FAQ schema."
+    ],
+    "whyItMatters": [
+      "[DEMO DATA] Industrial robotics B2B queries drop off on page 2.",
+      "[DEMO DATA] Perplexity and ChatGPT fail to cite laboratory benchmarks."
+    ],
+    "whatToDoNext": [
+      "[DEMO DATA] Implement contextual anchor links across autonomous navigation clusters.",
+      "[DEMO DATA] Add structured specification tables to actuator product pages."
+    ]
+  },
+  "issues": [
+    {
+      "id": "DEMO-ISS-01",
+      "title": "[DEMO DATA] Missing Internal Links to Kinematic Actuator Hub",
+      "category": "INTERNAL_LINKS",
+      "severity": "HIGH",
+      "impact": "HIGH",
+      "effort": "LOW",
+      "priority": "P0",
+      "status": "OPEN",
+      "rootCause": "Synthetic sample issue: Actuator catalog not linked from robotics main page.",
+      "affectedUrls": ["https://fictional-aero-robotics.example.com/actuators"],
+      "evidenceIds": ["DEMO-EVI-01"],
+      "recommendedAction": "Add contextual in-content anchors.",
+      "owner": "Demo Engineering Lead",
+      "timeframe": "NOW"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "DEMO-EVI-01",
+      "findingId": "DEMO-ISS-01",
+      "source": "Synthetic Demo Crawler",
+      "sourceType": "CRAWL_LOG",
+      "url": "https://fictional-aero-robotics.example.com/actuators",
+      "timestamp": "2026-07-15T12:00:00Z",
+      "rawMetricValue": "Inbound Links: 1 | PageRank: 0.009",
+      "snippet": "Synthetic test evidence log.",
+      "verificationStep": "Inspect demo crawl log."
+    }
+  ],
+  "semanticGraph": {
+    "topicalCenter": {
+      "available": true,
+      "centerEntity": "Autonomous Aerospace Robotics & Kinematic Actuators [DEMO]",
+      "dimensions": ["Autonomous UAVs", "Robotic Arms", "Sensor Fusion"],
+      "zones": {
+        "core": ["demo-site-root", "demo-ent-1"],
+        "relevantPeriphery": ["demo-page-1"],
+        "distantOffTopic": []
+      }
+    },
+    "nodes": [
+      {
+        "id": "demo-site-root",
+        "label": "AeroRobotics Demo Core",
+        "type": "SITE",
+        "status": "STRONG",
+        "url": "https://fictional-aero-robotics.example.com/",
+        "coverageScore": 80,
+        "visibilityScore": 75
+      },
+      {
+        "id": "demo-ent-1",
+        "label": "Industrial Robotics",
+        "type": "ENTITY",
+        "status": "STRONG",
+        "coverageScore": 75,
+        "visibilityScore": 70
+      },
+      {
+        "id": "demo-page-1",
+        "label": "/actuators",
+        "type": "PAGE",
+        "status": "WEAK",
+        "url": "https://fictional-aero-robotics.example.com/actuators",
+        "coverageScore": 55,
+        "visibilityScore": 50
+      }
+    ],
+    "edges": [
+      {
+        "id": "demo-e1",
+        "source": "demo-site-root",
+        "target": "demo-ent-1",
+        "relationType": "ENTITY_TO_TOPIC",
+        "relationKind": "semantic relationship"
+      },
+      {
+        "id": "demo-e2",
+        "source": "demo-ent-1",
+        "target": "demo-page-1",
+        "relationType": "SUBTOPIC_TO_PAGE",
+        "relationKind": "content relationship"
+      }
+    ]
+  },
+  "topicClusters": [],
+  "contentGaps": [],
+  "internalLinking": {
+    "totalLinks": 45,
+    "internalLinksRatio": 0.8,
+    "orphanPages": [],
+    "hubPages": [],
+    "underlinkedPages": [],
+    "overlinkedPages": [],
+    "brokenLinks": [],
+    "relationships": []
+  },
+  "technical": {
+    "crawlSummary": {
+      "totalCrawled": 15,
+      "indexablePages": 14,
+      "nonIndexablePages": 1,
+      "blockedByRobots": 0,
+      "canonicalMismatches": 0,
+      "redirectCount": 0,
+      "serverErrors": 0
+    },
+    "coreWebVitals": {
+      "lcpSeconds": 2.4,
+      "fidMs": 35,
+      "clsScore": 0.02,
+      "inpMs": 88,
+      "overallStatus": "PASS"
+    },
+    "statusCodes": [
+      { "code": 200, "label": "OK", "count": 14 },
+      { "code": 404, "label": "Not Found", "count": 1 }
+    ],
+    "httpSecurityHeaders": [],
+    "robotsTxtStatus": {
+      "valid": true,
+      "sitemapLinked": true,
+      "disallowedRulesCount": 1
+    },
+    "sitemapStatus": {
+      "url": "https://fictional-aero-robotics.example.com/sitemap.xml",
+      "urlsFound": 14,
+      "orphanedInSitemap": 0,
+      "missingFromSitemap": 0,
+      "validXml": true
+    },
+    "mobileParity": {
+      "isResponsive": true,
+      "viewportConfigured": true,
+      "tapTargetIssuesCount": 0,
+      "fontLegibilityPass": true
+    }
+  },
+  "contentAudit": {
+    "summary": {
+      "avgWordCount": 850,
+      "thinContentPagesCount": 1,
+      "duplicateRiskCount": 0,
+      "freshnessWarningCount": 1
+    },
+    "pages": []
+  },
+  "structuredData": [],
+  "eeat": [],
+  "aeo": {
+    "overallAeoReadiness": 55,
+    "llmCitationReadiness": "PARTIAL",
+    "directAnswerProbability": 50,
+    "faqStructurePresent": false,
+    "clearEntityDefinitionsCount": 2,
+    "perplexityCitationIndex": 40,
+    "chatGptRetrievalIndex": 55,
+    "geminiSearchGroundingScore": 58,
+    "bulletPointsAndTablesRatio": 0.1,
+    "actionableInsights": []
+  },
+  "searchPerformance": {
+    "gscAvailable": true,
+    "dateRange": "2026-05-01 to 2026-07-15",
+    "totalClicks": 8500,
+    "totalImpressions": 145000,
+    "averageCtr": 5.86,
+    "averagePosition": 8.5,
+    "historyTimeline": [],
+    "topPages": [],
+    "topQueries": [],
+    "strikingDistanceKeywords": [],
+    "lowCtrHighImpressionOpportunities": []
+  },
+  "siteArchitecture": []
+}
